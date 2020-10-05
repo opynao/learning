@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 long int FindSecondOccurence(const std::string&,const char);
-/*
+
 void TestFindSecondOccurence()
 {
 	using TestData_t = std::vector<std::pair<std::string,int>>; 
@@ -15,7 +15,7 @@ void TestFindSecondOccurence()
 	);
 }
 
-*/
+
 long int FindSecondOccurence(const std::string& str, const char ch)
 {
 	size_t index = str.find(ch);
