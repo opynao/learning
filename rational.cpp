@@ -3,6 +3,7 @@
 #include <numeric>
 #include <string>
 #include <iomanip>
+#include <cassert>
 
 using namespace std;
 
@@ -91,18 +92,10 @@ void Rational::Dump(ostream& os) const
 
 void Rational::Input(istream& is)
 {
-	size_t begin = is.tellg();
-	is.seekg(0,is.end);
-	size_t end = is.tellg();
-	std::cerr << begin << " " <<end <<std::endl;
-	if (begin == end)
-	{
-		is.clear();
+	while(is && !std::isdigit(is.get()));
+	if(!is)
 		return;
-	}
-	is.seekg(0,is.beg);
-	if(!std::isdigit(is.peek()))
-		return;
+	is.unget();
 	int numerator {};
 	is >> numerator;
 
@@ -138,6 +131,7 @@ ostream& operator << (ostream& os, const Rational& rational)
 
 int main() {
     {
+	    
         ostringstream output;
         output << Rational(-6, 8);
         if (output.str() != "-3/4") {
@@ -156,7 +150,6 @@ int main() {
             return 2;
         }
     }
-
     {
         istringstream input("");
         Rational r;
@@ -166,7 +159,6 @@ int main() {
             return 3;
         }
     }
-
     {
         istringstream input("5/7 10/8");
         Rational r1, r2;
