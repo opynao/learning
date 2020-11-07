@@ -1,0 +1,42 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/BusStops/include/BusStops.h
+string
+-
+vector
+-
+map
+-
+sstream
+-
+ostream
+-
+istream
+-
+
+/home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/BusStops/starter.cpp
+iostream
+-
+algorithm
+-
+functional
+-
+Utils.h
+/home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/BusStops/Utils.h
+include/BusStops.h
+/home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/BusStops/include/BusStops.h
+
+/home/vika/projects/pub/src/utils/include/Utils.h
+vector
+-
+map
+-
+unordered_map
+-
+
