@@ -1,1 +1,0 @@
-/usr/bin/c++     CMakeFiles/busStops.dir/starter.cpp.o  -o busStops 

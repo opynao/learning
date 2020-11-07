@@ -1,1 +1,0 @@
-/usr/bin/c++     CMakeFiles/testBusStops.dir/BusStopsTests.cpp.o  -o testBusStops 
