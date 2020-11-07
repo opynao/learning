@@ -2,6 +2,8 @@ cmake_minimum_required(VERSION 3.10)
 
 project(BusStops)
 
+add_compile_options(-Wall -Wextra -pedantic -Werror)
+
 add_executable(busStops main.cpp)
 
 add_library(busStops_lib starter.cpp)
