@@ -1,0 +1,1 @@
+/usr/bin/c++     CMakeFiles/phoneNumber.dir/main.cpp.o  -o phoneNumber libphoneNumber_lib.a 

@@ -1,8 +1,9 @@
 #include "include/BusStops.h"
+#include <iostream>
 
 int main()
 {
-/*	int query_count;
+	int query_count;
 	Query q;
 
 	std::cin >> query_count;
@@ -27,6 +28,6 @@ int main()
 				break;
 		}
 	}
-*/
+
 	return 0;
 }

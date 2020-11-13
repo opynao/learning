@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/PhoneNumber/phone_number.h
+string
+-
+
+/home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/PhoneNumber/tests/PhoneNumberTests.cpp
+gtest/gtest.h
+-
+../phone_number.h
+/home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/PhoneNumber/phone_number.h
+
