@@ -17,6 +17,8 @@ PhoneNumber::PhoneNumber(const std::string &international_number)
 	std::getline( ss, country_code_, delimiter );
 	std::getline( ss, city_code_, delimiter );
 	std::getline( ss, local_number_ );
+	if(country_code_.empty() || city_code_.empty() || local_number_.empty())
+		throw std::invalid_argument("");
 }
 
 std::string PhoneNumber::GetCountryCode() const

@@ -1,0 +1,6 @@
+[submodule "Coursera_C++_MFTI/Yellow_Belt/PhoneNumber/googletest"]
+	path = Coursera_C++_MFTI/Yellow_Belt/PhoneNumber/googletest
+	url = https://github.com/google/googletest
+[submodule "Coursera_C++_MFTI/Yellow_Belt/PhoneNumber/tests/googletest"]
+	path = Coursera_C++_MFTI/Yellow_Belt/PhoneNumber/tests/googletest
+	url = https://github.com/google/googletest
