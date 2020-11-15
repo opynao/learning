@@ -56,62 +56,16 @@ CMAKE_BINARY_DIR = /home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/PhoneNumber
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
 
-# Special rule for the target install/strip
-install/strip/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip/fast
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
 
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install
-
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
-
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
-
-# Special rule for the target install/local
-install/local/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local/fast
-
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
-
-# Special rule for the target test
-test/fast: test
-
-.PHONY : test/fast
-
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-
-.PHONY : list_install_components/fast
+.PHONY : rebuild_cache/fast
 
 # Special rule for the target edit_cache
 edit_cache:
@@ -124,16 +78,16 @@ edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
 
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
+# Special rule for the target test
+test/fast: test
 
-.PHONY : rebuild_cache/fast
+.PHONY : test/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -168,19 +122,6 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named phoneNumber_lib
-
-# Build rule for target.
-phoneNumber_lib: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 phoneNumber_lib
-.PHONY : phoneNumber_lib
-
-# fast build rule for target.
-phoneNumber_lib/fast:
-	$(MAKE) -f CMakeFiles/phoneNumber_lib.dir/build.make CMakeFiles/phoneNumber_lib.dir/build
-.PHONY : phoneNumber_lib/fast
-
-#=============================================================================
 # Target rules for targets named phoneNumber
 
 # Build rule for target.
@@ -194,17 +135,17 @@ phoneNumber/fast:
 .PHONY : phoneNumber/fast
 
 #=============================================================================
-# Target rules for targets named gmock_main
+# Target rules for targets named phoneNumber_lib
 
 # Build rule for target.
-gmock_main: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 gmock_main
-.PHONY : gmock_main
+phoneNumber_lib: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 phoneNumber_lib
+.PHONY : phoneNumber_lib
 
 # fast build rule for target.
-gmock_main/fast:
-	$(MAKE) -f googletest-build/googlemock/CMakeFiles/gmock_main.dir/build.make googletest-build/googlemock/CMakeFiles/gmock_main.dir/build
-.PHONY : gmock_main/fast
+phoneNumber_lib/fast:
+	$(MAKE) -f CMakeFiles/phoneNumber_lib.dir/build.make CMakeFiles/phoneNumber_lib.dir/build
+.PHONY : phoneNumber_lib/fast
 
 #=============================================================================
 # Target rules for targets named gmock
@@ -216,21 +157,21 @@ gmock: cmake_check_build_system
 
 # fast build rule for target.
 gmock/fast:
-	$(MAKE) -f googletest-build/googlemock/CMakeFiles/gmock.dir/build.make googletest-build/googlemock/CMakeFiles/gmock.dir/build
+	$(MAKE) -f googletest/googlemock/CMakeFiles/gmock.dir/build.make googletest/googlemock/CMakeFiles/gmock.dir/build
 .PHONY : gmock/fast
 
 #=============================================================================
-# Target rules for targets named gtest_main
+# Target rules for targets named gmock_main
 
 # Build rule for target.
-gtest_main: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 gtest_main
-.PHONY : gtest_main
+gmock_main: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 gmock_main
+.PHONY : gmock_main
 
 # fast build rule for target.
-gtest_main/fast:
-	$(MAKE) -f googletest-build/googletest/CMakeFiles/gtest_main.dir/build.make googletest-build/googletest/CMakeFiles/gtest_main.dir/build
-.PHONY : gtest_main/fast
+gmock_main/fast:
+	$(MAKE) -f googletest/googlemock/CMakeFiles/gmock_main.dir/build.make googletest/googlemock/CMakeFiles/gmock_main.dir/build
+.PHONY : gmock_main/fast
 
 #=============================================================================
 # Target rules for targets named gtest
@@ -242,8 +183,21 @@ gtest: cmake_check_build_system
 
 # fast build rule for target.
 gtest/fast:
-	$(MAKE) -f googletest-build/googletest/CMakeFiles/gtest.dir/build.make googletest-build/googletest/CMakeFiles/gtest.dir/build
+	$(MAKE) -f googletest/googletest/CMakeFiles/gtest.dir/build.make googletest/googletest/CMakeFiles/gtest.dir/build
 .PHONY : gtest/fast
+
+#=============================================================================
+# Target rules for targets named gtest_main
+
+# Build rule for target.
+gtest_main: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 gtest_main
+.PHONY : gtest_main
+
+# fast build rule for target.
+gtest_main/fast:
+	$(MAKE) -f googletest/googletest/CMakeFiles/gtest_main.dir/build.make googletest/googletest/CMakeFiles/gtest_main.dir/build
+.PHONY : gtest_main/fast
 
 #=============================================================================
 # Target rules for targets named testPhoneNumber
@@ -318,19 +272,15 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... install/strip"
-	@echo "... install"
-	@echo "... install/local"
-	@echo "... test"
-	@echo "... list_install_components"
-	@echo "... phoneNumber_lib"
-	@echo "... phoneNumber"
-	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... gmock_main"
+	@echo "... edit_cache"
+	@echo "... phoneNumber"
+	@echo "... test"
+	@echo "... phoneNumber_lib"
 	@echo "... gmock"
-	@echo "... gtest_main"
+	@echo "... gmock_main"
 	@echo "... gtest"
+	@echo "... gtest_main"
 	@echo "... testPhoneNumber"
 	@echo "... main.o"
 	@echo "... main.i"

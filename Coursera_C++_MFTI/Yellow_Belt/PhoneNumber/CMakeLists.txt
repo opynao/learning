@@ -6,11 +6,16 @@ project(PhoneNumber)
 
 add_compile_options(-Wall -Wextra -pedantic -Werror)
 
-add_executable(phoneNumber main.cpp)
+set(INSTALL_GTEST OFF)
+add_subdirectory(googletest)
+
+add_executable(PhoneNumber main.cpp)
+add_executable(PhoneNumber tests/PhoneNumberTests.cpp)
 
 add_library(phoneNumber_lib phone_number.cpp)
 
-target_link_libraries(phoneNumber phoneNumber_lib)
+target_link_libraries(PhoneNumber phoneNumber_lib)
+target_link_libraries(PhoneNumber gtest)
 
 enable_testing()
 

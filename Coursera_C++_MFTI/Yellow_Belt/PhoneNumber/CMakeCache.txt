@@ -286,13 +286,13 @@ TestingPhoneNumber_BINARY_DIR:STATIC=/home/vika/Learning/Coursera_C++_MFTI/Yello
 TestingPhoneNumber_SOURCE_DIR:STATIC=/home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/PhoneNumber/tests
 
 //Value Computed by CMake
-gmock_BINARY_DIR:STATIC=/home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/PhoneNumber/googletest-build/googlemock
+gmock_BINARY_DIR:STATIC=/home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/PhoneNumber/googletest/googlemock
 
 //Dependencies for the target
 gmock_LIB_DEPENDS:STATIC=general;gtest;
 
 //Value Computed by CMake
-gmock_SOURCE_DIR:STATIC=/home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/PhoneNumber/googletest-src/googlemock
+gmock_SOURCE_DIR:STATIC=/home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/PhoneNumber/googletest/googlemock
 
 //Build all of Google Mock's own tests.
 gmock_build_tests:BOOL=OFF
@@ -301,16 +301,16 @@ gmock_build_tests:BOOL=OFF
 gmock_main_LIB_DEPENDS:STATIC=general;gmock;
 
 //Value Computed by CMake
-googletest-distribution_BINARY_DIR:STATIC=/home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/PhoneNumber/googletest-build
+googletest-distribution_BINARY_DIR:STATIC=/home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/PhoneNumber/googletest
 
 //Value Computed by CMake
-googletest-distribution_SOURCE_DIR:STATIC=/home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/PhoneNumber/googletest-src
+googletest-distribution_SOURCE_DIR:STATIC=/home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/PhoneNumber/googletest
 
 //Value Computed by CMake
-gtest_BINARY_DIR:STATIC=/home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/PhoneNumber/googletest-build/googletest
+gtest_BINARY_DIR:STATIC=/home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/PhoneNumber/googletest/googletest
 
 //Value Computed by CMake
-gtest_SOURCE_DIR:STATIC=/home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/PhoneNumber/googletest-src/googletest
+gtest_SOURCE_DIR:STATIC=/home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/PhoneNumber/googletest/googletest
 
 //Build gtest's sample programs.
 gtest_build_samples:BOOL=OFF

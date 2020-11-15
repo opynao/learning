@@ -39,6 +39,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
+  include("/home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/PhoneNumber/googletest/cmake_install.cmake")
   include("/home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/PhoneNumber/tests/cmake_install.cmake")
 
 endif()
