@@ -1,0 +1,1 @@
+/usr/bin/clang++     CMakeFiles/BuildingEquation.dir/main.cpp.o  -o BuildingEquation libBuildingEquation_lib.a 

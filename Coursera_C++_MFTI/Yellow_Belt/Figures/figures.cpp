@@ -5,6 +5,11 @@
 #include <sstream>
 #include <iomanip>
 #include <cmath>
+#include <map>
+
+using Name_t = std::string;
+using Perimeter_t = double;
+using Area_t = double;
 
 enum class FigureType
 {
@@ -16,9 +21,10 @@ enum class FigureType
 class Figure
 {
 public:
-	virtual void Name() const = 0;
-	virtual void Perimeter() const = 0;
-	virtual void Area() const = 0;
+	virtual	~Figure() {}
+	virtual Name_t Name() const = 0;
+	virtual Perimeter_t Perimeter() const = 0;
+	virtual Area_t Area() const = 0;
 };
 
 //------------------------CIRCLE--------------------------
@@ -27,9 +33,9 @@ class Circle : public Figure
 {
 public:
 	explicit Circle(const int radius);
-	void Name() const override;
-	void Perimeter() const override;
-	void Area() const override;
+	Name_t Name() const override;
+	Perimeter_t Perimeter() const override;
+	Area_t Area() const override;
 private:
 	int radius_;
 };
@@ -39,21 +45,21 @@ Circle::Circle(const int radius)
 {
 }
 
-void Circle::Name() const
+Name_t Circle::Name() const
 {
-	std::cout << "CIRCLE";
+	return "CIRCLE";
 }
 
-void Circle::Perimeter() const
+Perimeter_t Circle::Perimeter() const
 {
 	double perimeter = 2 * 3.14 * radius_ ;
-	std::cout << perimeter;
+	return perimeter;
 }
 
-void Circle::Area() const
+Area_t Circle::Area() const
 {
 	double area = 3.14 * std::pow(radius_,2) ;
-	std::cout << area;
+	return area;
 }
 
 //-------------------------TRIANGLE-----------------------------
@@ -62,9 +68,9 @@ class Triangle : public Figure
 {
 public:
 	explicit Triangle(const int a, const int b, const int c);
-	void Name() const override;
-	void Perimeter() const override;
-	void Area() const override;
+	Name_t Name() const override;
+	Perimeter_t Perimeter() const override;
+	Area_t Area() const override;
 private:
 	int a_;
 	int b_;
@@ -78,22 +84,22 @@ Triangle::Triangle(const int a, const int b, const int c)
 {
 }
 
-void Triangle::Name() const
+Name_t Triangle::Name() const
 {
-	std::cout << "TRIANGLE";
+	return "TRIANGLE";
 }
 
-void Triangle::Perimeter() const
+Perimeter_t Triangle::Perimeter() const
 {
 	int perimeter = a_ + b_ + c_ ;
-	std::cout << perimeter;
+	return perimeter;
 }
 
-void Triangle::Area() const
+Area_t Triangle::Area() const
 {
-	double poluPerimeter = (a_ + b_ + c_)/2;
-	double area = std::pow( ( poluPerimeter * ( poluPerimeter - a_ ) * ( poluPerimeter - b_ ) * ( poluPerimeter - c_ ) ), 0.5 );
-	std::cout << area;
+	double poluPerimeter = static_cast<double>(a_ + b_ + c_)/2;
+	double area = pow( ( poluPerimeter * ( poluPerimeter - a_ ) * ( poluPerimeter - b_ ) * ( poluPerimeter - c_ ) ), 0.5 );
+	return area;
 }
 
 //----------------RECTANGLE---------------------
@@ -102,9 +108,9 @@ class Rect : public Figure
 {
 public:
 	Rect(const int width, const int height);
-	void Name() const override;
-	void Perimeter() const override;
-	void Area() const override;
+	Name_t Name() const override;
+	Perimeter_t Perimeter() const override;
+	Area_t Area() const override;
 private:
 	int width_;
 	int height_;
@@ -116,21 +122,19 @@ Rect::Rect(const int width, const int height)
 {
 }
 
-void Rect::Name() const
+Name_t Rect::Name() const
 {
-	std::cout << "RECT";
+	return "RECT";
 }
 
-void Rect::Perimeter() const
+Perimeter_t Rect::Perimeter() const
 {
-	int perimeter = ( width_ + height_ ) * 2;
-	std::cout << perimeter;
+	return ( width_ + height_ ) * 2;
 }
 
-void Rect::Area() const
+Area_t Rect::Area() const
 {
-	int area = width_ * height_;
-	std::cout << area;
+	return width_ * height_;
 }
 
 
@@ -138,15 +142,16 @@ std::shared_ptr<Figure> CreateFigure(std::istream& is)
 {
 	std::map<std::string,FigureType> mFigures
 	{
-		{"RECT", FigureType::Rect},
+		{"RECT", FigureType::Rectangle},
 		{"TRIANGLE", FigureType::Triangle},
 		{"CIRCLE", FigureType::Circle},
 	};
 	std::string figureType;
 	is >> figureType;
-	auto itFind = mFigures
+	int x, y, z;
+	auto itFind = mFigures.find(figureType);
 	std::shared_ptr<Figure> f;
-	switch(figureType)	
+	switch( itFind->second )	
 	{
 		case FigureType::Rectangle:
 			is >> x >> y;
@@ -182,7 +187,7 @@ int main()
 		{
 			for (const auto& current_figure : figures) 
 			{
-				std::cout << std::fixed << std::setprecision(3) << current_figure->Name() << " " << current_figure->Perimeter() << " " << current_figure->Area() << std::endl;
+				std::cout << std::fixed << std::setprecision(3)  << current_figure->Name() << " " << current_figure->Perimeter() << " " << current_figure->Area() << std::endl;
 			}
 		}
 	}

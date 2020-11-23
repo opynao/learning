@@ -1,0 +1,1 @@
+/usr/bin/clang++     CMakeFiles/bus_stops.dir/main.cpp.o  -o bus_stops libbus_stops_lib.a 

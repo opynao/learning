@@ -1,0 +1,6 @@
+/home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/BusStopsCopy/BusStops/bus_stops/__build/CMakeFiles/rebuild_cache.dir
+/home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/BusStopsCopy/BusStops/bus_stops/__build/CMakeFiles/edit_cache.dir
+/home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/BusStopsCopy/BusStops/bus_stops/__build/CMakeFiles/bus_stops_tests.dir
+/home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/BusStopsCopy/BusStops/bus_stops/__build/CMakeFiles/bus_stops_lib.dir
+/home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/BusStopsCopy/BusStops/bus_stops/__build/CMakeFiles/test.dir
+/home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/BusStopsCopy/BusStops/bus_stops/__build/CMakeFiles/bus_stops.dir

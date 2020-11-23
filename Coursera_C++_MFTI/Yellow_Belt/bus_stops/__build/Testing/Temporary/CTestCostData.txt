@@ -1,0 +1,16 @@
+QueryTest.AllBuses_Operator_Input 2 0.00114134
+QueryTest.NewBus_Operator_Input 2 0.00101115
+QueryTest.AddingTwoString 2 0.000857398
+QueryTest.BusesForStop_Operator_Input 2 0.00119111
+QueryTest.StopsForBus_Operator_Input 2 0.000713656
+BusManagerTest.GetStopsForBus 2 0.000668629
+BusManagerTest.GetBusRoutesForStop 2 0.000723254
+BusManagerTest.GetBusRoutesForStopPrintInRightOrder 2 0.000672617
+BusManagerTest.AllBuses 2 0.000650324
+BusManagerTest.GetBusesForStop 2 0.000651438
+RoutesCollector.AddingElems 2 0.00230753
+PrintStopsForBusTest.NoBusesForStop_NoInterchange 2 0.00227588
+PrintStopsForBusTest.ThereAreBusesForStop 2 0.000872335
+PrintStopsForBusTest.ThereAreBusesForStops 2 0.00100364
+PrintStopsForBusTest.ThereAreBusesForStops_ 2 0.000779553
+---

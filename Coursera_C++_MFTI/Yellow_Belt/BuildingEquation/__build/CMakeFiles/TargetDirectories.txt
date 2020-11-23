@@ -1,0 +1,6 @@
+/home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/BuildingEquation/__build/CMakeFiles/rebuild_cache.dir
+/home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/BuildingEquation/__build/CMakeFiles/edit_cache.dir
+/home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/BuildingEquation/__build/CMakeFiles/test.dir
+/home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/BuildingEquation/__build/CMakeFiles/BuildingEquation_lib.dir
+/home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/BuildingEquation/__build/CMakeFiles/BuildingEquation_tests.dir
+/home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/BuildingEquation/__build/CMakeFiles/BuildingEquation.dir
