@@ -1,0 +1,2 @@
+/usr/bin/ar qc libDateFinalProject_lib.a  CMakeFiles/DateFinalProject_lib.dir/src/date.cpp.o CMakeFiles/DateFinalProject_lib.dir/src/parse_date.cpp.o
+/usr/bin/ranlib libDateFinalProject_lib.a

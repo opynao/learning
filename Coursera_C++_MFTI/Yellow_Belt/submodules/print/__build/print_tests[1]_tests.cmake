@@ -1,0 +1,7 @@
+add_test( PrintTest.Dont_Repeating_Events_On_Different_Dates [==[/home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/submodules/print/__build/print_tests]==] [==[--gtest_filter=PrintTest.Dont_Repeating_Events_On_Different_Dates]==] --gtest_also_run_disabled_tests)
+set_tests_properties( PrintTest.Dont_Repeating_Events_On_Different_Dates PROPERTIES WORKING_DIRECTORY [==[/home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/submodules/print/__build]==])
+add_test( PrintTest.Repeating_Events_On_One_Date [==[/home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/submodules/print/__build/print_tests]==] [==[--gtest_filter=PrintTest.Repeating_Events_On_One_Date]==] --gtest_also_run_disabled_tests)
+set_tests_properties( PrintTest.Repeating_Events_On_One_Date PROPERTIES WORKING_DIRECTORY [==[/home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/submodules/print/__build]==])
+add_test( PrintTest.In_One_Day_Some_Different_Cases [==[/home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/submodules/print/__build/print_tests]==] [==[--gtest_filter=PrintTest.In_One_Day_Some_Different_Cases]==] --gtest_also_run_disabled_tests)
+set_tests_properties( PrintTest.In_One_Day_Some_Different_Cases PROPERTIES WORKING_DIRECTORY [==[/home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/submodules/print/__build]==])
+set( print_tests_TESTS PrintTest.Dont_Repeating_Events_On_Different_Dates PrintTest.Repeating_Events_On_One_Date PrintTest.In_One_Day_Some_Different_Cases)

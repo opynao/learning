@@ -1,0 +1,5 @@
+if(EXISTS "/home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/DateFinalProject/__build/DateFinalProject_tests[1]_tests.cmake")
+  include("/home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/DateFinalProject/__build/DateFinalProject_tests[1]_tests.cmake")
+else()
+  add_test(DateFinalProject_tests_NOT_BUILT DateFinalProject_tests_NOT_BUILT)
+endif()

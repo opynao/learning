@@ -1,0 +1,2 @@
+/usr/bin/ar qc liblast_lib.a  CMakeFiles/last_lib.dir/src/database.cpp.o CMakeFiles/last_lib.dir/src/date.cpp.o CMakeFiles/last_lib.dir/src/parse_date.cpp.o CMakeFiles/last_lib.dir/src/parse_event.cpp.o
+/usr/bin/ranlib liblast_lib.a

@@ -1,0 +1,40 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/database.h
+date.h
+../include/date.h
+vector
+-
+string
+-
+map
+-
+ostream
+-
+
+../include/date.h
+string
+-
+ostream
+-
+
+/home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/submodules/last/src/database.cpp
+database.h
+/home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/submodules/last/src/database.h
+date.h
+/home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/submodules/last/src/date.h
+algorithm
+-
+iomanip
+-
+iostream
+-
+stdexcept
+-
+

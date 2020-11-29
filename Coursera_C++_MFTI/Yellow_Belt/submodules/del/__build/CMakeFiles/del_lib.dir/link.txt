@@ -1,0 +1,2 @@
+/usr/bin/ar qc libdel_lib.a  CMakeFiles/del_lib.dir/src/condition_parser.cpp.o CMakeFiles/del_lib.dir/src/database.cpp.o CMakeFiles/del_lib.dir/src/date.cpp.o CMakeFiles/del_lib.dir/src/node.cpp.o CMakeFiles/del_lib.dir/src/parse_date.cpp.o CMakeFiles/del_lib.dir/src/parse_event.cpp.o CMakeFiles/del_lib.dir/src/token.cpp.o
+/usr/bin/ranlib libdel_lib.a

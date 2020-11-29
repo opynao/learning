@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/date.h
+string
+-
+
+../include/parse_date.h
+date.h
+../include/date.h
+iostream
+-
+
+/home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/DateFinalProject/main.cpp
+date.h
+/home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/DateFinalProject/date.h
+parse_date.h
+/home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/DateFinalProject/parse_date.h
+
