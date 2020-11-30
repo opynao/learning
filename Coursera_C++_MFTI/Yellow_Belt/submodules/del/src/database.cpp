@@ -28,7 +28,7 @@ std::string Database::Last(const Date& date) const
 {
 	if(date < db_.begin()->first)
 		throw std::invalid_argument("");
-	auto itCurrent = std::find_if(db_.begin(), db_.end(),[&date](const auto& pr)->bool {return date <= pr.first;});
+	auto itCurrent = std::find_if(db_.begin(), db_.end(),[&date](const auto& pr)->bool {return date < pr.first || date == pr.first;});
 	std::string result;
 	if( itCurrent->first == date )
 	{
@@ -48,17 +48,8 @@ bool Database::DeleteEvent(const Date& date, const std::string& event)
 		return true;
 	return false;
 }
-
-int Database::DeleteDate(const Date& date)
-{
-	auto it = db.find(date);
-	if(it == db.cend())
-		return 0;
-	int numberOfEvents = it->second.size();
-	db.erase(date);
-	return numberOfEvents;
-}
-
+*/
+/*
 std::set<std::string> Database::Find(const Date& date) const
 {
 	return db.find(date)->second;

@@ -1,5 +1,8 @@
 #include "condition_parser.h"
 #include "node.h"
+#include "condition_parser.h"
+#include "parse_date_event.h"
+#include "date.h"
 
 #include <sstream>
 #include "gtest/gtest.h"
@@ -8,26 +11,52 @@
 TEST( ParseCondition, DateComparisonNode )
 {
 	std::istringstream is("date != 2017-11-18");
- 	shared_ptr<Node> root = ParseCondition(is);
-    EXPECT_EQ( root->Evaluate({2017,11,17},""), false);
-    EXPECT_EQ( !root->Evaluate({2017, 11, 18}, ""), true);
+    std::istringstream date_iss1("2017-11-17");
+    std::istringstream date_iss2("2017-11-18");
+    auto root = ParseCondition(is);
+    const Date date1 = ParseDate(date_iss1);
+    const Date date2 = ParseDate(date_iss2);
+    EXPECT_EQ( root->Evaluate(date1,""), true );
+    EXPECT_EQ( !root->Evaluate(date2, ""), true);
+}
+
+TEST( ParseCondition, EventComparisonNode )
+{
+    std::istringstream is(R"(event == "sport event")");
+    auto root = ParseCondition(is);
+    EXPECT_EQ( root->Evaluate({},"sport event"), true );
+    EXPECT_EQ( !root->Evaluate({}, "holiday"), true);
+}
+
+TEST( ParseCondition, LogicalOperationNode )
+{
+  std::istringstream is("date >= 2017-01-01 AND date < 2017-07-01");
+  std::shared_ptr<Node> root = ParseCondition(is);
+  Date date;
+  std::vector<std::string> vTrue {"2017-1-1","2017-6-30","2017-3-1"};
+  for( auto& item : vTrue )
+  {
+    std::istringstream iss(item);
+    date = ParseDate(iss);
+    EXPECT_EQ( root->Evaluate( date, ""), true);
+  }
+}
+
+TEST( ParseCondition, LogicalOperationNode2 )
+{
+  std::istringstream is("date >= 2017-01-01 AND date < 2017-07-01");
+  std::shared_ptr<Node> root = ParseCondition(is);
+  Date date;
+  std::vector<std::string> vFalse {"2016-12-31","20-6-30","2017-8-1"};
+  for( auto& item : vFalse )
+  {
+    std::istringstream iss(item);
+    date = ParseDate(iss);
+    EXPECT_EQ( !root->Evaluate( date, ""), true);
+  }
 }
 
 /*  {
-    istringstream is(R"(event == "sport event")");
-    Assert(root->Evaluate({2017, 1, 1}, "sport event"), "Parse condition 3");
-    Assert(!root->Evaluate({2017, 1, 1}, "holiday"), "Parse condition 4");
-  }
-  {
-    istringstream is("date >= 2017-01-01 AND date < 2017-07-01");
-    shared_ptr<Node> root = ParseCondition(is);
-    Assert(root->Evaluate({2017, 1, 1}, ""), "Parse condition 5");
-    Assert(root->Evaluate({2017, 3, 1}, ""), "Parse condition 6");
-    Assert(root->Evaluate({2017, 6, 30}, ""), "Parse condition 7");
-    Assert(!root->Evaluate({2017, 7, 1}, ""), "Parse condition 8");
-    Assert(!root->Evaluate({2016, 12, 31}, ""), "Parse condition 9");
-  }
-  {
     istringstream is(R"(event != "sport event" AND event != "Wednesday")");
     shared_ptr<Node> root = ParseCondition(is);
     Assert(root->Evaluate({2017, 1, 1}, "holiday"), "Parse condition 10");

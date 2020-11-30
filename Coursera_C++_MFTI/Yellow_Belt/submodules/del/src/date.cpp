@@ -75,14 +75,6 @@ bool operator<(const Date& lhs, const Date& rhs)
 	return false;
 }
 
-bool operator<=(const Date& lhs, const Date& rhs)
-{
-
-	if(lhs.GetYear() <= rhs.GetYear() && lhs.GetMonth() <= rhs.GetMonth() && lhs.GetDay() <= rhs.GetDay())
-		return true;
-	return false;
-}
-
 bool operator==(const Date& lhs, const Date& rhs)
 {
 	if(lhs.GetYear() == rhs.GetYear() && lhs.GetMonth() == rhs.GetMonth() && lhs.GetDay() == rhs.GetDay())

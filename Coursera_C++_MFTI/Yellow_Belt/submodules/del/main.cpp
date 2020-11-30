@@ -1,6 +1,7 @@
 #include "database.h"
 #include "date.h"
 #include "parse_date_event.h"
+#include "condition_parser.h"
 
 #include <iostream>
 #include <stdexcept>
