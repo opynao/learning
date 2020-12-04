@@ -1,2 +1,0 @@
-/usr/bin/ar qc libBuildingEquation_lib.a  CMakeFiles/BuildingEquation_lib.dir/src/equation.cpp.o
-/usr/bin/ranlib libBuildingEquation_lib.a
