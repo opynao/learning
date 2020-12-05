@@ -1,2 +1,0 @@
-/usr/bin/ar qc libEventParserFinalCase_lib.a  CMakeFiles/EventParserFinalCase_lib.dir/src/database.cpp.o CMakeFiles/EventParserFinalCase_lib.dir/src/date.cpp.o CMakeFiles/EventParserFinalCase_lib.dir/src/parse_date.cpp.o CMakeFiles/EventParserFinalCase_lib.dir/src/parse_event.cpp.o
-/usr/bin/ranlib libEventParserFinalCase_lib.a

@@ -1,6 +1,0 @@
-/home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/DateFinalProject/__build/CMakeFiles/rebuild_cache.dir
-/home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/DateFinalProject/__build/CMakeFiles/edit_cache.dir
-/home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/DateFinalProject/__build/CMakeFiles/test.dir
-/home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/DateFinalProject/__build/CMakeFiles/DateFinalProject_tests.dir
-/home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/DateFinalProject/__build/CMakeFiles/DateFinalProject_lib.dir
-/home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/DateFinalProject/__build/CMakeFiles/DateFinalProject.dir

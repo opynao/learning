@@ -1,5 +1,0 @@
-ParseCondition.DateComparisonNode 1 0.00148907
-ParseCondition.EventComparisonNode 1 0.00136403
-ParseCondition.LogicalOperationNode 0 0
----
-ParseCondition.LogicalOperationNode

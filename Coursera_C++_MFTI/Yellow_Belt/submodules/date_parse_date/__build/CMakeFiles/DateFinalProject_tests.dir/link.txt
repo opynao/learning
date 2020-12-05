@@ -1,1 +1,0 @@
-/usr/bin/c++     CMakeFiles/DateFinalProject_tests.dir/tests/date_test.cpp.o  -o DateFinalProject_tests /usr/lib/x86_64-linux-gnu/libgtest.a /usr/lib/x86_64-linux-gnu/libgtest_main.a libDateFinalProject_lib.a /usr/lib/x86_64-linux-gnu/libgtest.a -lpthread 

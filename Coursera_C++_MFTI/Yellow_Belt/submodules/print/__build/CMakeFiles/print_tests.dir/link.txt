@@ -1,1 +1,0 @@
-/usr/bin/c++     CMakeFiles/print_tests.dir/tests/print_test.cpp.o  -o print_tests /usr/lib/x86_64-linux-gnu/libgtest.a /usr/lib/x86_64-linux-gnu/libgtest_main.a libprint_lib.a /usr/lib/x86_64-linux-gnu/libgtest.a -lpthread 

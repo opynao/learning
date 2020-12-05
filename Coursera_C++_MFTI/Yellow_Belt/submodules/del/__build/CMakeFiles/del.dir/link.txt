@@ -1,1 +1,0 @@
-/usr/bin/c++     CMakeFiles/del.dir/main.cpp.o  -o del libdel_lib.a 
