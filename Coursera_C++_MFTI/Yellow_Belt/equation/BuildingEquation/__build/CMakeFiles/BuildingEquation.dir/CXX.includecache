@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/equation.h
+iostream
+-
+string
+-
+vector
+-
+
+/home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/BuildingEquation/main.cpp
+equation.h
+/home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/BuildingEquation/equation.h
+

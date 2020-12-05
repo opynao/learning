@@ -1,0 +1,77 @@
+Start testing: Nov 22 17:51 +03
+----------------------------------------------------------
+1/2 Testing: Parser.OneNumber_OneOperation
+1/2 Test: Parser.OneNumber_OneOperation
+Command: "/home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/BuildingEquation/__build/BuildingEquation_tests" "--gtest_filter=Parser.OneNumber_OneOperation" "--gtest_also_run_disabled_tests"
+Directory: /home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/BuildingEquation/__build
+"Parser.OneNumber_OneOperation" start time: Nov 22 17:51 +03
+Output:
+----------------------------------------------------------
+Running main() from /build/googletest-lWsoze/googletest-1.8.1/googletest/src/gtest_main.cc
+Note: Google Test filter = Parser.OneNumber_OneOperation
+[==========] Running 1 test from 1 test case.
+[----------] Global test environment set-up.
+[----------] 1 test from Parser
+[ RUN      ] Parser.OneNumber_OneOperation
+/home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/BuildingEquation/tests/equation_tests.cpp:14: Failure
+Expected equality of these values:
+  os.str()
+    Which is: "8 42 3"
+  expectedResult
+    Which is: "(8) * 3"
+[  FAILED  ] Parser.OneNumber_OneOperation (0 ms)
+[----------] 1 test from Parser (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test case ran. (0 ms total)
+[  PASSED  ] 0 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] Parser.OneNumber_OneOperation
+
+ 1 FAILED TEST
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Failed.
+"Parser.OneNumber_OneOperation" end time: Nov 22 17:51 +03
+"Parser.OneNumber_OneOperation" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/2 Testing: Parser.OneNumber_OneOperation2
+2/2 Test: Parser.OneNumber_OneOperation2
+Command: "/home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/BuildingEquation/__build/BuildingEquation_tests" "--gtest_filter=Parser.OneNumber_OneOperation2" "--gtest_also_run_disabled_tests"
+Directory: /home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/BuildingEquation/__build
+"Parser.OneNumber_OneOperation2" start time: Nov 22 17:51 +03
+Output:
+----------------------------------------------------------
+Running main() from /build/googletest-lWsoze/googletest-1.8.1/googletest/src/gtest_main.cc
+Note: Google Test filter = Parser.OneNumber_OneOperation2
+[==========] Running 1 test from 1 test case.
+[----------] Global test environment set-up.
+[----------] 1 test from Parser
+[ RUN      ] Parser.OneNumber_OneOperation2
+/home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/BuildingEquation/tests/equation_tests.cpp:25: Failure
+Expected equality of these values:
+  os.str()
+    Which is: "8 45 3 45 3 45 3"
+  expectedResult
+    Which is: "(8) - 3"
+[  FAILED  ] Parser.OneNumber_OneOperation2 (0 ms)
+[----------] 1 test from Parser (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test case ran. (0 ms total)
+[  PASSED  ] 0 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] Parser.OneNumber_OneOperation2
+
+ 1 FAILED TEST
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Failed.
+"Parser.OneNumber_OneOperation2" end time: Nov 22 17:51 +03
+"Parser.OneNumber_OneOperation2" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Nov 22 17:51 +03

@@ -1,0 +1,5 @@
+if(EXISTS "/home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/BuildingEquation/__build/BuildingEquation_tests[1]_tests.cmake")
+  include("/home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/BuildingEquation/__build/BuildingEquation_tests[1]_tests.cmake")
+else()
+  add_test(BuildingEquation_tests_NOT_BUILT BuildingEquation_tests_NOT_BUILT)
+endif()
