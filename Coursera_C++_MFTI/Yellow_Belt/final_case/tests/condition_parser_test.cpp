@@ -98,3 +98,12 @@ TEST( ParseCondition, ComplexLogicalOperationNode4 )
   EXPECT_EQ( !root->Evaluate( Date ("2016-1-1"), "event"), true);
   EXPECT_EQ( root->Evaluate(Date ("2016-1-2"), "event"), true);
 }
+
+TEST( ParseCondition, EmptyCondition )
+{
+  std::istringstream is("");
+  std::shared_ptr<Node> root = ParseCondition(is);
+  std::vector<std::string> vDates {"2016-12-31","20-6-30","2017-8-1"};
+  for( auto& item : vDates )
+    EXPECT_EQ( root->Evaluate( Date (item), ""), true);
+}

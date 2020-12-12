@@ -1,16 +1,18 @@
+#include "gtest/gtest.h"
 #include "date.h"
 #include "parse_date_event.h"
-#include "gtest/gtest.h"
 
-
+#include <sstream>
+#include <ostream>
+#include <string>
 
 TEST ( ParseDate, CorrectDate )
 {
-	std::istringstream is("2020-11-27");
+	std::istringstream is("2017-11-24");
 	Date date {ParseDate(is)};
-	EXPECT_EQ( date.GetYear(), 2020 );
+	EXPECT_EQ( date.GetYear(), 2017 );
 	EXPECT_EQ( date.GetMonth(), 11 );
-	EXPECT_EQ( date.GetDay(), 27 );
+	EXPECT_EQ( date.GetDay(), 24 );
 }
 
 TEST ( ParseDate, CorrectDate2 )
@@ -22,137 +24,12 @@ TEST ( ParseDate, CorrectDate2 )
 	EXPECT_EQ( date.GetDay(), 30 );
 }
 
-TEST ( CheckFormat, CorrectnessOfDate) 
+TEST ( Date, OstreamOperator )
 {
-	EXPECT_EQ( true, Date::CheckFormat("1-1-1"));
-    EXPECT_EQ( true, Date::CheckFormat("-1-1-1"));
-	EXPECT_EQ( true, Date::CheckFormat("1--1-1"));
-	EXPECT_EQ( false, Date::CheckFormat("1---1-1"));
-	EXPECT_EQ( true, Date::CheckFormat("1-+1-+1"));
-	EXPECT_EQ( true, Date::CheckFormat("-1-1-1"));
-	EXPECT_EQ( false, Date::CheckFormat("--1-1-1"));
-	EXPECT_EQ( false, Date::CheckFormat("-1-1"));
-	EXPECT_EQ( false, Date::CheckFormat("1-1-"));
-	EXPECT_EQ( false, Date::CheckFormat("&1-1-1"));
-	EXPECT_EQ( false, Date::CheckFormat("1-1-1-"));
-}
-
-TEST ( ParseDate, ExceptionWrongDateFormat ) 
-{
-	std::istringstream is("1---1-1");
-	bool isException {false};
-	try
-	{
-		Date date {ParseDate(is)};
-	}
-	catch(...)
-	{
-		isException = true;
-	}
-	EXPECT_EQ( isException, true );
-}
-
-TEST ( ParseDate, ExceptionWrongDateFormat2 ) 
-{
-	std::istringstream is("--1-1-1");
-	bool isException {false};
-	try
-	{
-		Date date {ParseDate(is)};
-	}
-	catch(...)
-	{
-		isException = true;
-	}
-	EXPECT_EQ( isException, true );
-}
-
-TEST ( ParseDate, ExceptionWrongDateFormat3 ) 
-{
-	std::istringstream is("-1-1");
-	bool isException {false};
-	try
-	{
-		Date date {ParseDate(is)};
-	}
-	catch(...)
-	{
-		isException = true;
-	}
-	EXPECT_EQ( isException, true );
-}
-
-TEST ( ParseDate, ExceptionWrongDateFormat4 ) 
-{
-	std::istringstream is("1-1-");
-	bool isException {false};
-	try
-	{
-		Date date {ParseDate(is)};
-	}
-	catch(...)
-	{
-		isException = true;
-	}
-	EXPECT_EQ( isException, true );
-}
-
-TEST ( ParseDate, ExceptionWrongDateFormat5 ) 
-{
-	std::istringstream is("&1-1-1");
-	bool isException {false};
-	try
-	{
-		Date date {ParseDate(is)};
-	}
-	catch(...)
-	{
-		isException = true;
-	}
-	EXPECT_EQ( isException, true );
-}
-
-TEST ( ParseDate, ExceptionWrongDateFormat6 ) 
-{
-	std::istringstream is("1-1-1-");
-	bool isException {false};
-	try
-	{
-		Date date {ParseDate(is)};
-	}
-	catch(...)
-	{
-		isException = true;
-	}
-	EXPECT_EQ( isException, true );
-}
-
-TEST ( ParseDate, ExceptionWrongMonth ) 
-{
-	std::istringstream is("2020-0-15");
-	bool isException {false};
-	try
-	{
-		Date date {ParseDate(is)};
-	}
-	catch(...)
-	{
-		isException = true;
-	}
-	EXPECT_EQ( isException, true );
-}
-
-TEST ( ParseDate, ExceptionWrongDay ) 
-{
-	std::istringstream is("2020-1-35");
-	bool isException {false};
-	try
-	{
-		Date date {ParseDate(is)};
-	}
-	catch(...)
-	{
-		isException = true;
-	}
-	EXPECT_EQ( isException, true );
+	std::istringstream is("2017-11-24");
+	Date date {ParseDate(is)};
+	std::ostringstream oss;
+	oss << date;
+	std::string result {"2017-11-24"};
+	EXPECT_EQ( oss.str(), result );
 }

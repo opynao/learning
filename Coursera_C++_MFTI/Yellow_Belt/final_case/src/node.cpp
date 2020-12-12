@@ -5,6 +5,33 @@
 #define LOGF ;
 //std::cerr<< __FUNCTION__ <<std::endl 
 
+namespace
+{
+  template <typename T>
+  bool Compare(const Comparison cmp, T left, T right)
+  {
+    if( cmp ==  Comparison::Less )
+      return left < right;
+
+    if( cmp == Comparison::LessOrEqual )
+      return left <= right;
+    
+    if( cmp == Comparison::Greater )
+      return left > right;
+    
+    if( cmp == Comparison::GreaterOrEqual )
+      return left >= right;
+    
+    if( cmp == Comparison::Equal )
+      return left == right;
+    
+    if( cmp == Comparison::NotEqual )  
+      return left != right;
+    
+    return true;
+  }
+}
+
 bool EmptyNode::Evaluate([[maybe_unused]] const Date& date, [[maybe_unused]] const Event_t& event) const 
 {
   return true;
@@ -18,26 +45,7 @@ DateComparisonNode::DateComparisonNode(const Comparison& cmp, const Date& date)
 
 bool DateComparisonNode::Evaluate(const Date& date, [[maybe_unused]] const Event_t& event) const
 {
-  LOGF;
-  if( cmp_ ==  Comparison::Less )
-    return date < date_;
-
-  else if( cmp_ == Comparison::LessOrEqual )
-    return date <= date_;
-  
-  else if( cmp_ == Comparison::Greater )
-    return date > date_;
-  
-  else if( cmp_ == Comparison::GreaterOrEqual )
-    return date >= date_;
-  
-  else if( cmp_ == Comparison::Equal )
-    return date_ == date;
-  
-  else if( cmp_ == Comparison::NotEqual )  
-    return date_ != date;
-  else 
-    return true;
+  return Compare(cmp_, date, date_);
 }
 
 
@@ -47,12 +55,10 @@ EventComparisonNode::EventComparisonNode(const Comparison& cmp, const Event_t& e
 {
 }
 
+
 bool EventComparisonNode::Evaluate([[maybe_unused]] const Date& date, const Event_t& event) const
 {
-  if (cmp_ == Comparison::Equal)
-    return event_ == event;
-  else
-    return event_ != event;
+  return Compare(cmp_, event, event_);
 }
 
 LogicalOperationNode::LogicalOperationNode(const LogicalOperation& lo, const std::shared_ptr<Node>& lhs, const std::shared_ptr<Node>& rhs)

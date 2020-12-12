@@ -57,3 +57,50 @@ TEST_F( FindIfTest, FindIf_Finds_All_Events )
                       };
     EXPECT_EQ( find_if_db, result );
 }
+
+TEST_F( FindIfTest , Multiple_Find_By_Date ) 
+{
+    std::istringstream is (R"(event == "New Year")");
+    auto condition = ParseCondition(is);
+    auto predicate = [condition](const Date& date, const std::string& event){ return condition->Evaluate(date, event);};
+    vEvents_t find_if_db = db.FindIf(predicate);
+	vEvents_t result {
+                        { Date ("2017-01-01"),"New Year"},
+                      };
+    EXPECT_EQ( find_if_db, result );
+}
+
+TEST_F( FindIfTest, Complex_Find_Or )
+{
+    std::istringstream is (R"(date == 2017-01-01 OR event == "New Year")");
+    auto condition = ParseCondition(is);
+    auto predicate = [condition](const Date& date, const std::string& event){ return condition->Evaluate(date, event);};
+    vEvents_t find_if_db = db.FindIf(predicate);
+	vEvents_t result {
+                        { Date ("2017-01-01"),"New Year"},
+                        { Date ("2017-01-01"),"Holiday"},
+                      };
+    EXPECT_EQ( find_if_db, result );
+}    
+    
+TEST_F( FindIfTest, Complex_Find_And)
+{
+    std::istringstream is (R"(date == 2017-01-01 AND event == "New Year")");
+    auto condition = ParseCondition(is);
+    auto predicate = [condition](const Date& date, const std::string& event){ return condition->Evaluate(date, event);};
+    vEvents_t find_if_db = db.FindIf(predicate);
+	vEvents_t result {
+                        { Date ("2017-01-01"),"New Year"},
+                      };
+    EXPECT_EQ( find_if_db, result );
+} 
+
+TEST_F( FindIfTest, Complex_Find_And_Result_Nothing)
+{
+    std::istringstream is (R"(date == 2017-01-03 AND event == "New Year")");
+    auto condition = ParseCondition(is);
+    auto predicate = [condition](const Date& date, const std::string& event){ return condition->Evaluate(date, event);};
+    vEvents_t find_if_db = db.FindIf(predicate);
+	vEvents_t result {};
+    EXPECT_EQ( find_if_db, result );
+} 

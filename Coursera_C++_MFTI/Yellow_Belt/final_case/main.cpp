@@ -32,15 +32,15 @@ for (std::string line; std::getline(std::cin, line); )
 	else if (command == "Del") 
 	{
 		auto condition = ParseCondition(is);
-		auto predicate = [condition](const Date& date, const std::string& event){ return condition->Evaluate(date, event);};
+		auto predicate = [condition](const Date& date, const Event_t& event){ return condition->Evaluate(date, event);};
 		int count = db.RemoveIf(predicate);
 		std::cout << "Removed " << count << " entries" << std::endl;
 	} 
 
-/*	else if (command == "Find") 
+	else if (command == "Find") 
 	{
 		auto condition = ParseCondition(is);
-		auto predicate = [condition](const Date& date, const string& event) { return condition->Evaluate(date, event);};
+		auto predicate = [condition](const Date& date, const Event_t& event) { return condition->Evaluate(date, event);};
 		const auto entries = db.FindIf(predicate);
 		for (const auto& entry : entries) 
 		{
@@ -48,7 +48,7 @@ for (std::string line; std::getline(std::cin, line); )
 		}
 		std::cout << "Found " << entries.size() << " entries" << std::endl;
 	}
-*/
+
 	else if (command == "Last") 
 	{
 		try 

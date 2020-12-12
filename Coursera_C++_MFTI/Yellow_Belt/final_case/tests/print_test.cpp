@@ -67,3 +67,16 @@ TEST_F( PrintTest, In_One_Day_Some_Different_Cases )
 	db.Print(oss);
 	EXPECT_EQ( oss.str(), resultOutput );
 }
+
+TEST ( Print, Print1 )
+{
+	Database db;
+    db.Add({2019, 12, 1}, "a");
+    db.Add({2019, 12, 1}, "b");
+    db.Add({2019, 12, 2}, "c");
+    db.Add({2019, 12, 2}, "d");
+    db.Add({2019, 12, 3}, "e");
+	std::ostringstream out;
+    db.Print(out);
+    EXPECT_EQ( "2019-12-01 a\n2019-12-01 b\n2019-12-02 c\n2019-12-02 d\n2019-12-03 e\n", out.str() );
+}

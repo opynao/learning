@@ -14,27 +14,36 @@ class LastTest : public ::testing::Test
 protected:
 	void SetUp() override
 	{
+		for(const auto& item : vInput)
+		{
+			std::istringstream issCase (item.second);
+			const auto event = ParseEvent(issCase);
+			db.Add(Date (item.first), event);
+		}
 	}
+	
 	Database db;
+	
+	std::vector<std::pair<std::string,std::string>> vInput
+	{
+		{"2017-01-01","New Year"},
+		{"2017-03-08","Holiday1"},
+		{"2017-01-03","even1"},
+		{"2017-01-03","event2"},
+		{"2017-01-01","Holiday"},
+		{"2017-01-02","event1"},
+		{"2017-01-03","event3"},
+		{"2017-01-02","event3"}
+	};
 };
 
 
 TEST_F( LastTest, Test_Last_Throws_Exception )
 {
-	std::vector<std::pair<std::string,std::string>> vInput {{"2017-01-01","New Year"},{"2017-03-08","Holiday"},{"2017-01-01","Holiday"}};
-	for(const auto& item : vInput)
-	{
-		std::istringstream issDate (item.first);
-		std::istringstream issCase (item.second);
-		const auto date = ParseDate(issDate);
-		const auto event = ParseEvent(issCase);
-		db.Add(date, event);
-	}
 	bool isException {false};
 	try
 	{
-		std::istringstream iss ("2016-12-31");
-		std::string event = db.Last(ParseDate(iss));
+		auto date_event = db.Last(Date ("2016-12-21"));
 	}
 	catch(...)
 	{
@@ -43,36 +52,25 @@ TEST_F( LastTest, Test_Last_Throws_Exception )
 	EXPECT_EQ( isException, true );
 }
 
+
 TEST_F( LastTest, Test_Last_Output_Last_Case_In_One_Day )
 {
-	std::vector<std::pair<std::string,std::string>> vInput {{"2017-01-01","New Year"},{"2017-03-08","Holiday1"},{"2017-01-01","Holiday"}};
-	for(const auto& item : vInput)
-	{
-		std::istringstream issDate (item.first);
-		std::istringstream issCase (item.second);
-		const auto date = ParseDate(issDate);
-		const auto event = ParseEvent(issCase);
-		db.Add(date, event);
-	}
-	std::istringstream iss ("2017-01-01");
-	std::string event = db.Last(ParseDate(iss));
-	std::string result = "Holiday";
-	EXPECT_EQ( event, result );
+	auto date_event = db.Last(Date ("2017-01-01"));
+	std::pair< Date, Event_t > result = { Date ("2017-01-01"),"Holiday"};
+	EXPECT_EQ( date_event, result );
 }
+
 
 TEST_F( LastTest, Test_Last_Output_Last_Case )
 {
-	std::vector<std::pair<std::string,std::string>> vInput {{"2017-01-01","New Year"},{"2017-03-08","Holiday1"},{"2017-01-01","Holiday"}};
-	for(const auto& item : vInput)
-	{
-		std::istringstream issDate (item.first);
-		std::istringstream issCase (item.second);
-		const auto date = ParseDate(issDate);
-		const auto event = ParseEvent(issCase);
-		db.Add(date, event);
-	}
-	std::istringstream iss ("2017-06-06");
-	std::string event = db.Last(ParseDate(iss));
-	std::string result = "Holiday1";
-	EXPECT_EQ( event, result );
+	auto date_event = db.Last(Date ("2017-06-06"));
+	std::pair< Date, Event_t > result = { Date ("2017-03-08"),"Holiday1" };
+	EXPECT_EQ( date_event, result );
+}
+
+TEST_F( LastTest, Find_Largest_Among_All_Dates_and_Last_Added_Event_At_That_Date )
+{
+	const auto date_event = db.Last(Date ("2017-03-07"));
+	const std::pair< Date, Event_t > result = { Date ("2017-01-03"),"event3" };
+	EXPECT_EQ( date_event, result );
 }

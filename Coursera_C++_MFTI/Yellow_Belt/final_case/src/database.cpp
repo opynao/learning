@@ -1,58 +1,129 @@
 #include "database.h"
-#include "date.h"
 #include <algorithm>
-#include <iomanip>
+#include <iterator>
 #include <iostream>
-#include <stdexcept>
+#include <sstream> 
+#include <tuple> 
 
-void Database::Add( const Date& date, const std::string& event )
+//int NUMBER = 0;
+
+void Database::Add( const Date& date, const Event_t& event )
 {
-	if(std::count(db_[date].begin(),db_[date].end(),event))
-			return;
-	db_[date].push_back(event);
+	const auto [ it , inserted ] = db_set[date].insert(event);
+	if( inserted )
+		db_[date].push_back(event);
+}
+
+size_t Database::GetDatabaseSize() const
+{
+	return db_.size();
+}
+
+size_t Database::GetEventsCountByDate(const Date& date) const
+{
+	const auto itEventsByDate = db_.find(date);
+	if( itEventsByDate != db_.cend())
+		return itEventsByDate->second.size();
+	return 0;
 }
 
 void Database::Print(std::ostream& os) const
 {
 	for(const auto& dateEvents : db_)
-	{
-		const Date& date = dateEvents.first;
-		std::for_each(dateEvents.second.cbegin(),dateEvents.second.cend(),[&date, &os](const std::string& event)
-				{
-					os << date << event << std::endl;
-				});
-	}
+		os << dateEvents;
 }
 
-std::string Database::Last(const Date& date) const
+
+std::pair< Date, Event_t > Database::Last(const Date& date) const
 {
-	if(date < db_.begin()->first)
+//среди всех имеющихся дат событий нужно найти наибольшую, не превосходящую date;
+//из всех событий с такой датой нужно выбрать последнее добавленное и вывести в формате, аналогичном формату команды Print;
+//если date меньше всех имеющихся дат, необходимо вывести «No entries»
+	
+	if(db_.empty() || date < db_.begin()->first)
 		throw std::invalid_argument("");
-	auto itCurrent = std::find_if(db_.begin(), db_.end(),[&date](const auto& pr)->bool {return date < pr.first || date == pr.first;});
-	std::string result;
+
+	const auto itCurrent = db_.lower_bound(date);
+	
 	if( itCurrent->first == date )
+		return { date, itCurrent->second.back() };
+	
+	if(itCurrent == db_.cend())
 	{
-		std::cout << date;
-		return itCurrent->second.back();
+		const auto itReturn = std::prev(db_.end());
+		return { itReturn->first, itReturn->second.back() };
 	}
-	auto itPrev = std::prev(itCurrent);
-	std::cout << itPrev->first;
-	return itPrev->second.back();
+
+	const auto itReturn = std::prev(itCurrent);
+	return { itReturn->first, itReturn->second.back() };
 }
 
-/*
-bool Database::DeleteEvent(const Date& date, const std::string& event)
+
+int Database::RemoveIf(std::function <bool ( Date, Event_t )> pred)
 {
-	auto it = db.find(date);
-	if(db.cend() != it && it->second.erase(event))
-		return true;
-	return false;
-}
-*/
-/*
-std::set<std::string> Database::Find(const Date& date) const
-{
-	return db.find(date)->second;
+	int entries {};
+/*	NUMBER++;
+	if(NUMBER == 10)
+	{
+		Database db;
+		std::ostringstream oss;
+		db.Print(oss);
+		throw std::runtime_error(oss.str());
+	}*/
+	std::map< Date, std::set<Event_t> > toDelete;
+	for( auto& [ date, vEvents ] : db_)
+	{
+		auto itDel = std::stable_partition( vEvents.begin(), vEvents.end(), [&date, &pred](const Event_t & event) ->bool { return !pred( date, event );} );
+		if( itDel != vEvents.end() )
+		{
+			entries += std::distance( itDel, vEvents.end() );
+	//		toDelete.emplace( date, {itDel, vEvents.end() } );
+			std::move( itDel, vEvents.end(), std::inserter( toDelete[date], toDelete[date].end() ) );
+			vEvents.erase( itDel, vEvents.end() );
+		}
+	}
+
+	for( const auto& [ date, vEvents ] : toDelete )
+	{
+		for( const auto& event : vEvents )
+			db_set[date].erase(event);
+	}
+	DeleteEmptyEvents(db_);
+	DeleteEmptyEvents(db_set);
+	return entries;
 }
 
-*/
+
+vEvents_t Database::FindIf(std::function <bool ( Date, Event_t )> pred) const
+{
+	vEvents_t vEvents;
+	for(const auto& prDateEvents : db_ )
+	{
+		auto events = prDateEvents.second;
+		const auto& date = prDateEvents.first;
+		auto itCopy = std::stable_partition( events.begin(), events.end(), [&date, &pred](const Event_t & event) ->bool { return !pred( date, event );} );
+		if( itCopy != events.cend() )
+		{
+			for( auto iter = itCopy; iter != events.cend(); ++iter)
+				vEvents.push_back(std::make_pair(date, *iter));
+		}
+	}
+	return vEvents;
+}
+
+
+std::ostream& operator <<(std::ostream& os, const std::pair<const Date, const std::vector<Event_t>>& pr)
+{
+	for(const auto& event : pr.second )
+		os << pr.first << " " << event << std::endl;
+	return os;
+}
+
+
+std::ostream& operator <<(std::ostream& os, const std::pair<const Date,const Event_t>& pr)
+{
+	os << pr.first << " " << pr.second;
+	return os;
+}
+
+

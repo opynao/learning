@@ -6,40 +6,40 @@
 #include <string>
 #include <map>
 #include <ostream>
+#include <functional>
+#include <set>
+
+template <typename T>
+void DeleteEmptyEvents(T& m)
+{
+	for(auto iter = m.begin(); iter != m.end(); ) 
+	{
+		if (iter->second.empty())
+          iter = m.erase(iter);
+		else 
+          ++iter;
+	}
+}
 
 using Event_t = std::string;
-//using Pred_t = bool(*) (const Date&, const Event_t&);
+using Database_t = std::map<Date, std::vector<Event_t>>;
+using DatabaseSet_t = std::map<Date, std::set<Event_t>>;
+using vEvents_t = std::vector<std::pair<Date, Event_t>>;
 
-class Database {
+class Database 
+{
 public:
 	void Add(const Date&, const Event_t&);
 	void Print(std::ostream&) const;
-	template<typename T> int RemoveIf(T pred);
-//	std::set<std::string> FindIf(auto predicate) const;
-	std::string Last(const Date&) const;
+	int RemoveIf(std::function <bool ( Date, Event_t )>);
+	vEvents_t FindIf(std::function<bool ( Date, Event_t )>) const;
+	std::pair< Date, Event_t > Last(const Date&) const;
+	size_t GetDatabaseSize() const;
+	size_t GetEventsCountByDate(const Date&) const;
 private:
-	std::map<Date, std::vector<Event_t>> db_;
+	Database_t db_;
+	DatabaseSet_t db_set;
 };
 
-template <typename T>
-int Database::RemoveIf(T pred)
-{
-	int entries {};
-	bool i = pred(db_.begin()->first,db_.begin()->second.back());
-/*	for(auto& date : db_ )
-	{
-		for (auto& event : date )
-		{
-			auto itDel = (std::remove_if( db_.begin(), db_.end(), pred(date, event) ));
-			for(auto it = itDel ; it != db_.end(); ++it)
-			{
-				entries += it->second.size();
-			}
-		}
-	}
-	db_.erase(itDel, db_.end());
-*/	if(i == 0)
-		return entries+1;
-	return entries;
-}
-
+std::ostream& operator <<(std::ostream& os, const std::pair<const Date, const std::vector<Event_t>>& pr);
+std::ostream& operator <<(std::ostream& os, const std::pair<const Date,const Event_t>& pr);

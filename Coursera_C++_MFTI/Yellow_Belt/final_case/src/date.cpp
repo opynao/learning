@@ -3,39 +3,6 @@
 #include <ostream>
 #include <iomanip>
 
-bool Date::CheckFormat(const std::string& date)
-{
-	if(date.empty())
-		return false;
-	size_t i = 0;
-
-	for( size_t j : {1,2,3} )
-	{
-		if(date[i] == '-' || date[i] == '+')
-	        	++i;
-		
-		if (!std::isdigit(date[i]))
-			return false;
-	
-		while(std::isdigit(date[i]) && i < date.size() - 1)
-			++i;
-
-		if( j == 3 && !std::isdigit(date[i]))
-			return false;
-		
-		if (j != 3)
-		{
-			if( date[i++] != '-')
-				return false;
-		}
-	}
-
-	if( i == date.size() - 1)
-		return true;
-	
-	return false;
-}
-
 Date::Date(const std::string& strDate)
 {
 	std::istringstream is (strDate);
@@ -44,6 +11,13 @@ Date::Date(const std::string& strDate)
 	is >> month;
 	is.get();
 	is >> day;
+}
+
+Date::Date(const int y, const int m, const int d)
+	: year {y}
+	, month {m}
+	, day {d}
+{
 }
 
 int Date::GetYear() const
@@ -63,14 +37,9 @@ int Date::GetDay() const
 
 bool operator<(const Date& lhs, const Date& rhs)
 {
-
-	if(lhs.GetYear() < rhs.GetYear())
-		return true;
-	
-	if(lhs.GetYear() == rhs.GetYear() && lhs.GetMonth() < rhs.GetMonth())
-		return true;
-	
-	if(lhs.GetMonth() == rhs.GetMonth() && lhs.GetDay() < rhs.GetDay())
+	std::vector<int> vLhs { lhs.GetYear(), lhs.GetMonth(), lhs.GetDay() };
+	std::vector<int> vRhs { rhs.GetYear(), rhs.GetMonth(), rhs.GetDay() };
+	if ( vLhs < vRhs)
 		return true;
 	return false;
 }
@@ -105,6 +74,6 @@ bool operator<=(const Date& lhs, const Date& rhs)
 
 std::ostream& operator<<(std::ostream& os, const Date& date)
 {
-	os << std::setw(4) << std::setfill('0') << date.GetYear() << '-' << std::setw(2) << date.GetMonth() << '-' << std::setw(2) << date.GetDay() << ' ';
+	os << std::setw(4) << std::setfill('0') << date.GetYear() << '-' << std::setw(2) << date.GetMonth() << '-' << std::setw(2) << date.GetDay();
 	return os;
 }
