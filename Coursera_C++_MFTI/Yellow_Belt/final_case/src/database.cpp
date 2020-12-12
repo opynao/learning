@@ -5,8 +5,6 @@
 #include <sstream> 
 #include <tuple> 
 
-//int NUMBER = 0;
-
 void Database::Add( const Date& date, const Event_t& event )
 {
 	const auto [ it , inserted ] = db_set[date].insert(event);
@@ -36,10 +34,6 @@ void Database::Print(std::ostream& os) const
 
 std::pair< Date, Event_t > Database::Last(const Date& date) const
 {
-//среди всех имеющихся дат событий нужно найти наибольшую, не превосходящую date;
-//из всех событий с такой датой нужно выбрать последнее добавленное и вывести в формате, аналогичном формату команды Print;
-//если date меньше всех имеющихся дат, необходимо вывести «No entries»
-	
 	if(db_.empty() || date < db_.begin()->first)
 		throw std::invalid_argument("");
 
@@ -62,22 +56,14 @@ std::pair< Date, Event_t > Database::Last(const Date& date) const
 int Database::RemoveIf(std::function <bool ( Date, Event_t )> pred)
 {
 	int entries {};
-/*	NUMBER++;
-	if(NUMBER == 10)
+	for( auto& prDateEvents : db_)
 	{
-		Database db;
-		std::ostringstream oss;
-		db.Print(oss);
-		throw std::runtime_error(oss.str());
-	}*/
-	std::map< Date, std::set<Event_t> > toDelete;
-	for( auto& [ date, vEvents ] : db_)
-	{
+		const auto& date = prDateEvents.first;
+		auto& vEvents = prDateEvents.second;
 		auto itDel = std::stable_partition( vEvents.begin(), vEvents.end(), [&date, &pred](const Event_t & event) ->bool { return !pred( date, event );} );
 		if( itDel != vEvents.end() )
 		{
 			entries += std::distance( itDel, vEvents.end() );
-	//		toDelete.emplace( date, {itDel, vEvents.end() } );
 			std::move( itDel, vEvents.end(), std::inserter( toDelete[date], toDelete[date].end() ) );
 			vEvents.erase( itDel, vEvents.end() );
 		}
