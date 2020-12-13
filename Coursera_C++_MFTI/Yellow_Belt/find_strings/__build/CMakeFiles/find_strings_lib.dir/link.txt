@@ -1,0 +1,2 @@
+/usr/bin/ar qc libfind_strings_lib.a  CMakeFiles/find_strings_lib.dir/src/find_started_from_char.cpp.o
+/usr/bin/ranlib libfind_strings_lib.a

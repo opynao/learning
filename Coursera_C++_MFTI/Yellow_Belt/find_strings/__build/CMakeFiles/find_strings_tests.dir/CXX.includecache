@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/find_started_from_char.h
+vector
+-
+string
+-
+iostream
+-
+algorithm
+-
+
+/home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/find_strings/tests/find_started_from_char_test.cpp
+gtest/gtest.h
+/home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/find_strings/tests/gtest/gtest.h
+find_started_from_char.h
+/home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/find_strings/tests/find_started_from_char.h
+iostream
+-
+
