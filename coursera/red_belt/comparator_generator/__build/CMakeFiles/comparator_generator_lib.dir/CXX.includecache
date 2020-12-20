@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/airline_ticket.h
+string
+-
+sstream
+-
+
+/home/vika/Learning/Coursera_C++_MFTI/Red_Belt/comparator_generator/src/airline_ticket.cpp
+vector
+-
+iostream
+-
+tuple
+-
+airline_ticket.h
+/home/vika/Learning/Coursera_C++_MFTI/Red_Belt/comparator_generator/src/airline_ticket.h
+

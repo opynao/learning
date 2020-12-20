@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/print.h
+
+/home/vika/Learning/Coursera_C++_MFTI/Red_Belt/print_values/src/print.cpp
+print.h
+/home/vika/Learning/Coursera_C++_MFTI/Red_Belt/print_values/src/print.h
+

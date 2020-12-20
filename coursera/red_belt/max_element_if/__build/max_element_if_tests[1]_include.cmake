@@ -1,0 +1,5 @@
+if(EXISTS "/home/vika/Learning/Coursera_C++_MFTI/Red_Belt/max_element_if/__build/max_element_if_tests[1]_tests.cmake")
+  include("/home/vika/Learning/Coursera_C++_MFTI/Red_Belt/max_element_if/__build/max_element_if_tests[1]_tests.cmake")
+else()
+  add_test(max_element_if_tests_NOT_BUILT max_element_if_tests_NOT_BUILT)
+endif()

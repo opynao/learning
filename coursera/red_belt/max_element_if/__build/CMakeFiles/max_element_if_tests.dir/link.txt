@@ -1,0 +1,1 @@
+/usr/bin/clang++     CMakeFiles/max_element_if_tests.dir/tests/test.cpp.o  -o max_element_if_tests /usr/lib/x86_64-linux-gnu/libgtest.a /usr/lib/x86_64-linux-gnu/libgtest_main.a libmax_element_if_lib.a /usr/lib/x86_64-linux-gnu/libgtest.a -lpthread 

@@ -1,0 +1,6 @@
+/home/vika/Learning/Coursera_C++_MFTI/Red_Belt/max_element_if/__build/CMakeFiles/rebuild_cache.dir
+/home/vika/Learning/Coursera_C++_MFTI/Red_Belt/max_element_if/__build/CMakeFiles/edit_cache.dir
+/home/vika/Learning/Coursera_C++_MFTI/Red_Belt/max_element_if/__build/CMakeFiles/test.dir
+/home/vika/Learning/Coursera_C++_MFTI/Red_Belt/max_element_if/__build/CMakeFiles/max_element_if_tests.dir
+/home/vika/Learning/Coursera_C++_MFTI/Red_Belt/max_element_if/__build/CMakeFiles/max_element_if_lib.dir
+/home/vika/Learning/Coursera_C++_MFTI/Red_Belt/max_element_if/__build/CMakeFiles/max_element_if.dir

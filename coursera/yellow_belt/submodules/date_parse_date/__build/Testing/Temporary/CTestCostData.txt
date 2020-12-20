@@ -1,0 +1,12 @@
+ParseDate.CorrectDate 1 0.00137478
+ParseDate.CorrectDate2 1 0.00115385
+ParseDate.ExceptionWrongDateFormat 1 0.00122555
+ParseDate.ExceptionWrongDateFormat2 1 0.00157617
+ParseDate.ExceptionWrongDateFormat3 1 0.00157408
+ParseDate.ExceptionWrongDateFormat4 1 0.00119062
+ParseDate.ExceptionWrongDateFormat5 1 0.00113069
+ParseDate.ExceptionWrongDateFormat6 1 0.00118926
+ParseDate.ExceptionWrongMonth 1 0.00115517
+ParseDate.ExceptionWrongDay 1 0.00114153
+CheckFormat.CorrectnessOfDate 1 0.00240664
+---

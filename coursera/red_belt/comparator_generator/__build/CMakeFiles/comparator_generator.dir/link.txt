@@ -1,0 +1,1 @@
+/usr/bin/c++     CMakeFiles/comparator_generator.dir/main.cpp.o  -o comparator_generator libcomparator_generator_lib.a 

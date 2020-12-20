@@ -1,0 +1,2 @@
+/usr/bin/ar qc libbus_stops_lib.a  CMakeFiles/bus_stops_lib.dir/src/bus_manager.cpp.o CMakeFiles/bus_stops_lib.dir/src/query.cpp.o CMakeFiles/bus_stops_lib.dir/src/responses.cpp.o
+/usr/bin/ranlib libbus_stops_lib.a

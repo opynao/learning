@@ -1,0 +1,2 @@
+/usr/bin/ar qc libprint_lib.a  CMakeFiles/print_lib.dir/src/database.cpp.o CMakeFiles/print_lib.dir/src/date.cpp.o CMakeFiles/print_lib.dir/src/parse_date.cpp.o CMakeFiles/print_lib.dir/src/parse_event.cpp.o
+/usr/bin/ranlib libprint_lib.a

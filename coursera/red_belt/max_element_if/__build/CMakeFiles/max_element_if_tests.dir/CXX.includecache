@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/max.h
+algorithm
+-
+vector
+-
+
+/home/vika/Learning/Coursera_C++_MFTI/Red_Belt/max_element_if/tests/test.cpp
+gtest/gtest.h
+/home/vika/Learning/Coursera_C++_MFTI/Red_Belt/max_element_if/tests/gtest/gtest.h
+max.h
+/home/vika/Learning/Coursera_C++_MFTI/Red_Belt/max_element_if/tests/max.h
+string
+-
+vector
+-
+list
+-
+forward_list
+-
+numeric
+-
+iterator
+-
+

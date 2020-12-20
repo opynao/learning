@@ -1,0 +1,1 @@
+/usr/bin/clang++     CMakeFiles/print_values_tests.dir/tests/test.cpp.o  -o print_values_tests /usr/lib/x86_64-linux-gnu/libgtest.a /usr/lib/x86_64-linux-gnu/libgtest_main.a libprint_values_lib.a /usr/lib/x86_64-linux-gnu/libgtest.a -lpthread 

@@ -1,0 +1,5 @@
+add_test( TestSortBy.Test1 [==[/home/vika/Learning/Coursera_C++_MFTI/Red_Belt/comparator_generator/__build/comparator_generator_tests]==] [==[--gtest_filter=TestSortBy.Test1]==] --gtest_also_run_disabled_tests)
+set_tests_properties( TestSortBy.Test1 PROPERTIES WORKING_DIRECTORY [==[/home/vika/Learning/Coursera_C++_MFTI/Red_Belt/comparator_generator/__build]==])
+add_test( TestUpdate.Test2 [==[/home/vika/Learning/Coursera_C++_MFTI/Red_Belt/comparator_generator/__build/comparator_generator_tests]==] [==[--gtest_filter=TestUpdate.Test2]==] --gtest_also_run_disabled_tests)
+set_tests_properties( TestUpdate.Test2 PROPERTIES WORKING_DIRECTORY [==[/home/vika/Learning/Coursera_C++_MFTI/Red_Belt/comparator_generator/__build]==])
+set( comparator_generator_tests_TESTS TestSortBy.Test1 TestUpdate.Test2)

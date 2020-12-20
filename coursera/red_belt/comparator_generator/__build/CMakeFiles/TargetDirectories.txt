@@ -1,0 +1,6 @@
+/home/vika/Learning/Coursera_C++_MFTI/Red_Belt/comparator_generator/__build/CMakeFiles/rebuild_cache.dir
+/home/vika/Learning/Coursera_C++_MFTI/Red_Belt/comparator_generator/__build/CMakeFiles/edit_cache.dir
+/home/vika/Learning/Coursera_C++_MFTI/Red_Belt/comparator_generator/__build/CMakeFiles/comparator_generator_tests.dir
+/home/vika/Learning/Coursera_C++_MFTI/Red_Belt/comparator_generator/__build/CMakeFiles/test.dir
+/home/vika/Learning/Coursera_C++_MFTI/Red_Belt/comparator_generator/__build/CMakeFiles/comparator_generator_lib.dir
+/home/vika/Learning/Coursera_C++_MFTI/Red_Belt/comparator_generator/__build/CMakeFiles/comparator_generator.dir

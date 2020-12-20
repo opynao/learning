@@ -1,0 +1,7 @@
+add_test( ParseEvent.SimpleEvent [==[/home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/submodulesFinalCaseTESTS/EventParserFinalCase/__build/EventParserFinalCase_tests]==] [==[--gtest_filter=ParseEvent.SimpleEvent]==] --gtest_also_run_disabled_tests)
+set_tests_properties( ParseEvent.SimpleEvent PROPERTIES WORKING_DIRECTORY [==[/home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/submodulesFinalCaseTESTS/EventParserFinalCase/__build]==])
+add_test( ParseEvent.Parse_event_with_leading_spaces [==[/home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/submodulesFinalCaseTESTS/EventParserFinalCase/__build/EventParserFinalCase_tests]==] [==[--gtest_filter=ParseEvent.Parse_event_with_leading_spaces]==] --gtest_also_run_disabled_tests)
+set_tests_properties( ParseEvent.Parse_event_with_leading_spaces PROPERTIES WORKING_DIRECTORY [==[/home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/submodulesFinalCaseTESTS/EventParserFinalCase/__build]==])
+add_test( ParseEvent.Parse_multiple_events [==[/home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/submodulesFinalCaseTESTS/EventParserFinalCase/__build/EventParserFinalCase_tests]==] [==[--gtest_filter=ParseEvent.Parse_multiple_events]==] --gtest_also_run_disabled_tests)
+set_tests_properties( ParseEvent.Parse_multiple_events PROPERTIES WORKING_DIRECTORY [==[/home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/submodulesFinalCaseTESTS/EventParserFinalCase/__build]==])
+set( EventParserFinalCase_tests_TESTS ParseEvent.SimpleEvent ParseEvent.Parse_event_with_leading_spaces ParseEvent.Parse_multiple_events)

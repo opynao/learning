@@ -1,0 +1,42 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/condition_parser.h
+node.h
+../include/node.h
+memory
+-
+iostream
+-
+
+../include/date.h
+string
+-
+ostream
+-
+
+../include/node.h
+date.h
+../include/date.h
+string
+-
+memory
+-
+map
+-
+functional
+-
+
+/home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/submodules/del/src/node.cpp
+node.h
+/home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/submodules/del/src/node.h
+condition_parser.h
+/home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/submodules/del/src/condition_parser.h
+iostream
+-
+

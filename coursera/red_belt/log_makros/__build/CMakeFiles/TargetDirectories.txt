@@ -1,0 +1,6 @@
+/home/vika/Learning/Coursera_C++_MFTI/Red_Belt/log_makros/__build/CMakeFiles/edit_cache.dir
+/home/vika/Learning/Coursera_C++_MFTI/Red_Belt/log_makros/__build/CMakeFiles/rebuild_cache.dir
+/home/vika/Learning/Coursera_C++_MFTI/Red_Belt/log_makros/__build/CMakeFiles/log_makros_lib.dir
+/home/vika/Learning/Coursera_C++_MFTI/Red_Belt/log_makros/__build/CMakeFiles/test.dir
+/home/vika/Learning/Coursera_C++_MFTI/Red_Belt/log_makros/__build/CMakeFiles/log_makros_tests.dir
+/home/vika/Learning/Coursera_C++_MFTI/Red_Belt/log_makros/__build/CMakeFiles/log_makros.dir

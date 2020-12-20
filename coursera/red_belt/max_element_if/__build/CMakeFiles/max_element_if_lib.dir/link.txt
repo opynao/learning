@@ -1,0 +1,2 @@
+/usr/bin/ar qc libmax_element_if_lib.a  CMakeFiles/max_element_if_lib.dir/src/max.cpp.o
+/usr/bin/ranlib libmax_element_if_lib.a

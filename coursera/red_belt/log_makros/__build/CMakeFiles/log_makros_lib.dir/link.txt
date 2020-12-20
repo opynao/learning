@@ -1,0 +1,2 @@
+/usr/bin/ar qc liblog_makros_lib.a  CMakeFiles/log_makros_lib.dir/src/logger_class.cpp.o
+/usr/bin/ranlib liblog_makros_lib.a

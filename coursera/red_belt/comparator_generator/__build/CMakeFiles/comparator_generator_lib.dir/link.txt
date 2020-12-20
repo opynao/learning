@@ -1,0 +1,2 @@
+/usr/bin/ar qc libcomparator_generator_lib.a  CMakeFiles/comparator_generator_lib.dir/src/airline_ticket.cpp.o
+/usr/bin/ranlib libcomparator_generator_lib.a

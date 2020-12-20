@@ -1,0 +1,6 @@
+/home/vika/Learning/Coursera_C++_MFTI/Red_Belt/print_values/__build/CMakeFiles/rebuild_cache.dir
+/home/vika/Learning/Coursera_C++_MFTI/Red_Belt/print_values/__build/CMakeFiles/edit_cache.dir
+/home/vika/Learning/Coursera_C++_MFTI/Red_Belt/print_values/__build/CMakeFiles/test.dir
+/home/vika/Learning/Coursera_C++_MFTI/Red_Belt/print_values/__build/CMakeFiles/print_values_tests.dir
+/home/vika/Learning/Coursera_C++_MFTI/Red_Belt/print_values/__build/CMakeFiles/print_values_lib.dir
+/home/vika/Learning/Coursera_C++_MFTI/Red_Belt/print_values/__build/CMakeFiles/print_values.dir

@@ -1,0 +1,6 @@
+/home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/submodules/print/__build/CMakeFiles/rebuild_cache.dir
+/home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/submodules/print/__build/CMakeFiles/edit_cache.dir
+/home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/submodules/print/__build/CMakeFiles/print_tests.dir
+/home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/submodules/print/__build/CMakeFiles/print_lib.dir
+/home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/submodules/print/__build/CMakeFiles/test.dir
+/home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/submodules/print/__build/CMakeFiles/print.dir

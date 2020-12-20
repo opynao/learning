@@ -1,0 +1,1 @@
+/usr/bin/c++     CMakeFiles/log_makros_tests.dir/tests/log_test.cpp.o  -o log_makros_tests /usr/lib/x86_64-linux-gnu/libgtest.a /usr/lib/x86_64-linux-gnu/libgtest_main.a liblog_makros_lib.a /usr/lib/x86_64-linux-gnu/libgtest.a -lpthread 

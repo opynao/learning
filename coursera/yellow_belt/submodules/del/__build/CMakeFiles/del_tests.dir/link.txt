@@ -1,0 +1,1 @@
+/usr/bin/c++     CMakeFiles/del_tests.dir/tests/condition_parser_test.cpp.o  -o del_tests /usr/lib/x86_64-linux-gnu/libgtest.a /usr/lib/x86_64-linux-gnu/libgtest_main.a libdel_lib.a /usr/lib/x86_64-linux-gnu/libgtest.a -lpthread 

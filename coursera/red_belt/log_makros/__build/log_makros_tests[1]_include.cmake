@@ -1,0 +1,5 @@
+if(EXISTS "/home/vika/Learning/Coursera_C++_MFTI/Red_Belt/log_makros/__build/log_makros_tests[1]_tests.cmake")
+  include("/home/vika/Learning/Coursera_C++_MFTI/Red_Belt/log_makros/__build/log_makros_tests[1]_tests.cmake")
+else()
+  add_test(log_makros_tests_NOT_BUILT log_makros_tests_NOT_BUILT)
+endif()

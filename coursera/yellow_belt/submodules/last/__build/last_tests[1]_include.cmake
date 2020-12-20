@@ -1,0 +1,5 @@
+if(EXISTS "/home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/submodules/last/__build/last_tests[1]_tests.cmake")
+  include("/home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/submodules/last/__build/last_tests[1]_tests.cmake")
+else()
+  add_test(last_tests_NOT_BUILT last_tests_NOT_BUILT)
+endif()

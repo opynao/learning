@@ -1,0 +1,5 @@
+if(EXISTS "/home/vika/Learning/Coursera_C++_MFTI/Red_Belt/print_values/__build/print_values_tests[1]_tests.cmake")
+  include("/home/vika/Learning/Coursera_C++_MFTI/Red_Belt/print_values/__build/print_values_tests[1]_tests.cmake")
+else()
+  add_test(print_values_tests_NOT_BUILT print_values_tests_NOT_BUILT)
+endif()

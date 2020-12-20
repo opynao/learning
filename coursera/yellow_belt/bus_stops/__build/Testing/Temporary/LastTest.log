@@ -1,0 +1,408 @@
+Start testing: Nov 22 09:52 +03
+----------------------------------------------------------
+1/15 Testing: QueryTest.AllBuses_Operator_Input
+1/15 Test: QueryTest.AllBuses_Operator_Input
+Command: "/home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/BusStopsCopy/BusStops/bus_stops/__build/bus_stops_tests" "--gtest_filter=QueryTest.AllBuses_Operator_Input" "--gtest_also_run_disabled_tests"
+Directory: /home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/BusStopsCopy/BusStops/bus_stops/__build
+"QueryTest.AllBuses_Operator_Input" start time: Nov 22 09:52 +03
+Output:
+----------------------------------------------------------
+Running main() from /build/googletest-lWsoze/googletest-1.8.1/googletest/src/gtest_main.cc
+Note: Google Test filter = QueryTest.AllBuses_Operator_Input
+[==========] Running 1 test from 1 test case.
+[----------] Global test environment set-up.
+[----------] 1 test from QueryTest
+[ RUN      ] QueryTest.AllBuses_Operator_Input
+[       OK ] QueryTest.AllBuses_Operator_Input (0 ms)
+[----------] 1 test from QueryTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test case ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"QueryTest.AllBuses_Operator_Input" end time: Nov 22 09:52 +03
+"QueryTest.AllBuses_Operator_Input" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/15 Testing: QueryTest.NewBus_Operator_Input
+2/15 Test: QueryTest.NewBus_Operator_Input
+Command: "/home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/BusStopsCopy/BusStops/bus_stops/__build/bus_stops_tests" "--gtest_filter=QueryTest.NewBus_Operator_Input" "--gtest_also_run_disabled_tests"
+Directory: /home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/BusStopsCopy/BusStops/bus_stops/__build
+"QueryTest.NewBus_Operator_Input" start time: Nov 22 09:52 +03
+Output:
+----------------------------------------------------------
+Running main() from /build/googletest-lWsoze/googletest-1.8.1/googletest/src/gtest_main.cc
+Note: Google Test filter = QueryTest.NewBus_Operator_Input
+[==========] Running 1 test from 1 test case.
+[----------] Global test environment set-up.
+[----------] 1 test from QueryTest
+[ RUN      ] QueryTest.NewBus_Operator_Input
+[       OK ] QueryTest.NewBus_Operator_Input (0 ms)
+[----------] 1 test from QueryTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test case ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"QueryTest.NewBus_Operator_Input" end time: Nov 22 09:52 +03
+"QueryTest.NewBus_Operator_Input" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/15 Testing: QueryTest.AddingTwoString
+3/15 Test: QueryTest.AddingTwoString
+Command: "/home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/BusStopsCopy/BusStops/bus_stops/__build/bus_stops_tests" "--gtest_filter=QueryTest.AddingTwoString" "--gtest_also_run_disabled_tests"
+Directory: /home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/BusStopsCopy/BusStops/bus_stops/__build
+"QueryTest.AddingTwoString" start time: Nov 22 09:52 +03
+Output:
+----------------------------------------------------------
+Running main() from /build/googletest-lWsoze/googletest-1.8.1/googletest/src/gtest_main.cc
+Note: Google Test filter = QueryTest.AddingTwoString
+[==========] Running 1 test from 1 test case.
+[----------] Global test environment set-up.
+[----------] 1 test from QueryTest
+[ RUN      ] QueryTest.AddingTwoString
+[       OK ] QueryTest.AddingTwoString (0 ms)
+[----------] 1 test from QueryTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test case ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"QueryTest.AddingTwoString" end time: Nov 22 09:52 +03
+"QueryTest.AddingTwoString" time elapsed: 00:00:00
+----------------------------------------------------------
+
+4/15 Testing: QueryTest.BusesForStop_Operator_Input
+4/15 Test: QueryTest.BusesForStop_Operator_Input
+Command: "/home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/BusStopsCopy/BusStops/bus_stops/__build/bus_stops_tests" "--gtest_filter=QueryTest.BusesForStop_Operator_Input" "--gtest_also_run_disabled_tests"
+Directory: /home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/BusStopsCopy/BusStops/bus_stops/__build
+"QueryTest.BusesForStop_Operator_Input" start time: Nov 22 09:52 +03
+Output:
+----------------------------------------------------------
+Running main() from /build/googletest-lWsoze/googletest-1.8.1/googletest/src/gtest_main.cc
+Note: Google Test filter = QueryTest.BusesForStop_Operator_Input
+[==========] Running 1 test from 1 test case.
+[----------] Global test environment set-up.
+[----------] 1 test from QueryTest
+[ RUN      ] QueryTest.BusesForStop_Operator_Input
+[       OK ] QueryTest.BusesForStop_Operator_Input (0 ms)
+[----------] 1 test from QueryTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test case ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"QueryTest.BusesForStop_Operator_Input" end time: Nov 22 09:52 +03
+"QueryTest.BusesForStop_Operator_Input" time elapsed: 00:00:00
+----------------------------------------------------------
+
+5/15 Testing: QueryTest.StopsForBus_Operator_Input
+5/15 Test: QueryTest.StopsForBus_Operator_Input
+Command: "/home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/BusStopsCopy/BusStops/bus_stops/__build/bus_stops_tests" "--gtest_filter=QueryTest.StopsForBus_Operator_Input" "--gtest_also_run_disabled_tests"
+Directory: /home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/BusStopsCopy/BusStops/bus_stops/__build
+"QueryTest.StopsForBus_Operator_Input" start time: Nov 22 09:52 +03
+Output:
+----------------------------------------------------------
+Running main() from /build/googletest-lWsoze/googletest-1.8.1/googletest/src/gtest_main.cc
+Note: Google Test filter = QueryTest.StopsForBus_Operator_Input
+[==========] Running 1 test from 1 test case.
+[----------] Global test environment set-up.
+[----------] 1 test from QueryTest
+[ RUN      ] QueryTest.StopsForBus_Operator_Input
+[       OK ] QueryTest.StopsForBus_Operator_Input (0 ms)
+[----------] 1 test from QueryTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test case ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"QueryTest.StopsForBus_Operator_Input" end time: Nov 22 09:52 +03
+"QueryTest.StopsForBus_Operator_Input" time elapsed: 00:00:00
+----------------------------------------------------------
+
+6/15 Testing: BusManagerTest.GetStopsForBus
+6/15 Test: BusManagerTest.GetStopsForBus
+Command: "/home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/BusStopsCopy/BusStops/bus_stops/__build/bus_stops_tests" "--gtest_filter=BusManagerTest.GetStopsForBus" "--gtest_also_run_disabled_tests"
+Directory: /home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/BusStopsCopy/BusStops/bus_stops/__build
+"BusManagerTest.GetStopsForBus" start time: Nov 22 09:52 +03
+Output:
+----------------------------------------------------------
+Running main() from /build/googletest-lWsoze/googletest-1.8.1/googletest/src/gtest_main.cc
+Note: Google Test filter = BusManagerTest.GetStopsForBus
+[==========] Running 1 test from 1 test case.
+[----------] Global test environment set-up.
+[----------] 1 test from BusManagerTest
+[ RUN      ] BusManagerTest.GetStopsForBus
+[       OK ] BusManagerTest.GetStopsForBus (0 ms)
+[----------] 1 test from BusManagerTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test case ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"BusManagerTest.GetStopsForBus" end time: Nov 22 09:52 +03
+"BusManagerTest.GetStopsForBus" time elapsed: 00:00:00
+----------------------------------------------------------
+
+7/15 Testing: BusManagerTest.GetBusRoutesForStop
+7/15 Test: BusManagerTest.GetBusRoutesForStop
+Command: "/home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/BusStopsCopy/BusStops/bus_stops/__build/bus_stops_tests" "--gtest_filter=BusManagerTest.GetBusRoutesForStop" "--gtest_also_run_disabled_tests"
+Directory: /home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/BusStopsCopy/BusStops/bus_stops/__build
+"BusManagerTest.GetBusRoutesForStop" start time: Nov 22 09:52 +03
+Output:
+----------------------------------------------------------
+Running main() from /build/googletest-lWsoze/googletest-1.8.1/googletest/src/gtest_main.cc
+Note: Google Test filter = BusManagerTest.GetBusRoutesForStop
+[==========] Running 1 test from 1 test case.
+[----------] Global test environment set-up.
+[----------] 1 test from BusManagerTest
+[ RUN      ] BusManagerTest.GetBusRoutesForStop
+[       OK ] BusManagerTest.GetBusRoutesForStop (1 ms)
+[----------] 1 test from BusManagerTest (1 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test case ran. (1 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"BusManagerTest.GetBusRoutesForStop" end time: Nov 22 09:52 +03
+"BusManagerTest.GetBusRoutesForStop" time elapsed: 00:00:00
+----------------------------------------------------------
+
+8/15 Testing: BusManagerTest.GetBusRoutesForStopPrintInRightOrder
+8/15 Test: BusManagerTest.GetBusRoutesForStopPrintInRightOrder
+Command: "/home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/BusStopsCopy/BusStops/bus_stops/__build/bus_stops_tests" "--gtest_filter=BusManagerTest.GetBusRoutesForStopPrintInRightOrder" "--gtest_also_run_disabled_tests"
+Directory: /home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/BusStopsCopy/BusStops/bus_stops/__build
+"BusManagerTest.GetBusRoutesForStopPrintInRightOrder" start time: Nov 22 09:52 +03
+Output:
+----------------------------------------------------------
+Running main() from /build/googletest-lWsoze/googletest-1.8.1/googletest/src/gtest_main.cc
+Note: Google Test filter = BusManagerTest.GetBusRoutesForStopPrintInRightOrder
+[==========] Running 1 test from 1 test case.
+[----------] Global test environment set-up.
+[----------] 1 test from BusManagerTest
+[ RUN      ] BusManagerTest.GetBusRoutesForStopPrintInRightOrder
+[       OK ] BusManagerTest.GetBusRoutesForStopPrintInRightOrder (0 ms)
+[----------] 1 test from BusManagerTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test case ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"BusManagerTest.GetBusRoutesForStopPrintInRightOrder" end time: Nov 22 09:52 +03
+"BusManagerTest.GetBusRoutesForStopPrintInRightOrder" time elapsed: 00:00:00
+----------------------------------------------------------
+
+9/15 Testing: BusManagerTest.AllBuses
+9/15 Test: BusManagerTest.AllBuses
+Command: "/home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/BusStopsCopy/BusStops/bus_stops/__build/bus_stops_tests" "--gtest_filter=BusManagerTest.AllBuses" "--gtest_also_run_disabled_tests"
+Directory: /home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/BusStopsCopy/BusStops/bus_stops/__build
+"BusManagerTest.AllBuses" start time: Nov 22 09:52 +03
+Output:
+----------------------------------------------------------
+Running main() from /build/googletest-lWsoze/googletest-1.8.1/googletest/src/gtest_main.cc
+Note: Google Test filter = BusManagerTest.AllBuses
+[==========] Running 1 test from 1 test case.
+[----------] Global test environment set-up.
+[----------] 1 test from BusManagerTest
+[ RUN      ] BusManagerTest.AllBuses
+[       OK ] BusManagerTest.AllBuses (1 ms)
+[----------] 1 test from BusManagerTest (1 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test case ran. (1 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"BusManagerTest.AllBuses" end time: Nov 22 09:52 +03
+"BusManagerTest.AllBuses" time elapsed: 00:00:00
+----------------------------------------------------------
+
+10/15 Testing: BusManagerTest.GetBusesForStop
+10/15 Test: BusManagerTest.GetBusesForStop
+Command: "/home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/BusStopsCopy/BusStops/bus_stops/__build/bus_stops_tests" "--gtest_filter=BusManagerTest.GetBusesForStop" "--gtest_also_run_disabled_tests"
+Directory: /home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/BusStopsCopy/BusStops/bus_stops/__build
+"BusManagerTest.GetBusesForStop" start time: Nov 22 09:52 +03
+Output:
+----------------------------------------------------------
+Running main() from /build/googletest-lWsoze/googletest-1.8.1/googletest/src/gtest_main.cc
+Note: Google Test filter = BusManagerTest.GetBusesForStop
+[==========] Running 1 test from 1 test case.
+[----------] Global test environment set-up.
+[----------] 1 test from BusManagerTest
+[ RUN      ] BusManagerTest.GetBusesForStop
+[       OK ] BusManagerTest.GetBusesForStop (0 ms)
+[----------] 1 test from BusManagerTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test case ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"BusManagerTest.GetBusesForStop" end time: Nov 22 09:52 +03
+"BusManagerTest.GetBusesForStop" time elapsed: 00:00:00
+----------------------------------------------------------
+
+11/15 Testing: RoutesCollector.AddingElems
+11/15 Test: RoutesCollector.AddingElems
+Command: "/home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/BusStopsCopy/BusStops/bus_stops/__build/bus_stops_tests" "--gtest_filter=RoutesCollector.AddingElems" "--gtest_also_run_disabled_tests"
+Directory: /home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/BusStopsCopy/BusStops/bus_stops/__build
+"RoutesCollector.AddingElems" start time: Nov 22 09:52 +03
+Output:
+----------------------------------------------------------
+Running main() from /build/googletest-lWsoze/googletest-1.8.1/googletest/src/gtest_main.cc
+Note: Google Test filter = RoutesCollector.AddingElems
+[==========] Running 1 test from 1 test case.
+[----------] Global test environment set-up.
+[----------] 1 test from RoutesCollector
+[ RUN      ] RoutesCollector.AddingElems
+[       OK ] RoutesCollector.AddingElems (0 ms)
+[----------] 1 test from RoutesCollector (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test case ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"RoutesCollector.AddingElems" end time: Nov 22 09:52 +03
+"RoutesCollector.AddingElems" time elapsed: 00:00:00
+----------------------------------------------------------
+
+12/15 Testing: PrintStopsForBusTest.NoBusesForStop_NoInterchange
+12/15 Test: PrintStopsForBusTest.NoBusesForStop_NoInterchange
+Command: "/home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/BusStopsCopy/BusStops/bus_stops/__build/bus_stops_tests" "--gtest_filter=PrintStopsForBusTest.NoBusesForStop_NoInterchange" "--gtest_also_run_disabled_tests"
+Directory: /home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/BusStopsCopy/BusStops/bus_stops/__build
+"PrintStopsForBusTest.NoBusesForStop_NoInterchange" start time: Nov 22 09:52 +03
+Output:
+----------------------------------------------------------
+Running main() from /build/googletest-lWsoze/googletest-1.8.1/googletest/src/gtest_main.cc
+Note: Google Test filter = PrintStopsForBusTest.NoBusesForStop_NoInterchange
+[==========] Running 1 test from 1 test case.
+[----------] Global test environment set-up.
+[----------] 1 test from PrintStopsForBusTest
+[ RUN      ] PrintStopsForBusTest.NoBusesForStop_NoInterchange
+[       OK ] PrintStopsForBusTest.NoBusesForStop_NoInterchange (0 ms)
+[----------] 1 test from PrintStopsForBusTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test case ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"PrintStopsForBusTest.NoBusesForStop_NoInterchange" end time: Nov 22 09:52 +03
+"PrintStopsForBusTest.NoBusesForStop_NoInterchange" time elapsed: 00:00:00
+----------------------------------------------------------
+
+13/15 Testing: PrintStopsForBusTest.ThereAreBusesForStop
+13/15 Test: PrintStopsForBusTest.ThereAreBusesForStop
+Command: "/home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/BusStopsCopy/BusStops/bus_stops/__build/bus_stops_tests" "--gtest_filter=PrintStopsForBusTest.ThereAreBusesForStop" "--gtest_also_run_disabled_tests"
+Directory: /home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/BusStopsCopy/BusStops/bus_stops/__build
+"PrintStopsForBusTest.ThereAreBusesForStop" start time: Nov 22 09:52 +03
+Output:
+----------------------------------------------------------
+Running main() from /build/googletest-lWsoze/googletest-1.8.1/googletest/src/gtest_main.cc
+Note: Google Test filter = PrintStopsForBusTest.ThereAreBusesForStop
+[==========] Running 1 test from 1 test case.
+[----------] Global test environment set-up.
+[----------] 1 test from PrintStopsForBusTest
+[ RUN      ] PrintStopsForBusTest.ThereAreBusesForStop
+[       OK ] PrintStopsForBusTest.ThereAreBusesForStop (0 ms)
+[----------] 1 test from PrintStopsForBusTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test case ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"PrintStopsForBusTest.ThereAreBusesForStop" end time: Nov 22 09:52 +03
+"PrintStopsForBusTest.ThereAreBusesForStop" time elapsed: 00:00:00
+----------------------------------------------------------
+
+14/15 Testing: PrintStopsForBusTest.ThereAreBusesForStops
+14/15 Test: PrintStopsForBusTest.ThereAreBusesForStops
+Command: "/home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/BusStopsCopy/BusStops/bus_stops/__build/bus_stops_tests" "--gtest_filter=PrintStopsForBusTest.ThereAreBusesForStops" "--gtest_also_run_disabled_tests"
+Directory: /home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/BusStopsCopy/BusStops/bus_stops/__build
+"PrintStopsForBusTest.ThereAreBusesForStops" start time: Nov 22 09:52 +03
+Output:
+----------------------------------------------------------
+Running main() from /build/googletest-lWsoze/googletest-1.8.1/googletest/src/gtest_main.cc
+Note: Google Test filter = PrintStopsForBusTest.ThereAreBusesForStops
+[==========] Running 1 test from 1 test case.
+[----------] Global test environment set-up.
+[----------] 1 test from PrintStopsForBusTest
+[ RUN      ] PrintStopsForBusTest.ThereAreBusesForStops
+[       OK ] PrintStopsForBusTest.ThereAreBusesForStops (0 ms)
+[----------] 1 test from PrintStopsForBusTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test case ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"PrintStopsForBusTest.ThereAreBusesForStops" end time: Nov 22 09:52 +03
+"PrintStopsForBusTest.ThereAreBusesForStops" time elapsed: 00:00:00
+----------------------------------------------------------
+
+15/15 Testing: PrintStopsForBusTest.ThereAreBusesForStops_
+15/15 Test: PrintStopsForBusTest.ThereAreBusesForStops_
+Command: "/home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/BusStopsCopy/BusStops/bus_stops/__build/bus_stops_tests" "--gtest_filter=PrintStopsForBusTest.ThereAreBusesForStops_" "--gtest_also_run_disabled_tests"
+Directory: /home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/BusStopsCopy/BusStops/bus_stops/__build
+"PrintStopsForBusTest.ThereAreBusesForStops_" start time: Nov 22 09:52 +03
+Output:
+----------------------------------------------------------
+Running main() from /build/googletest-lWsoze/googletest-1.8.1/googletest/src/gtest_main.cc
+Note: Google Test filter = PrintStopsForBusTest.ThereAreBusesForStops_
+[==========] Running 1 test from 1 test case.
+[----------] Global test environment set-up.
+[----------] 1 test from PrintStopsForBusTest
+[ RUN      ] PrintStopsForBusTest.ThereAreBusesForStops_
+[       OK ] PrintStopsForBusTest.ThereAreBusesForStops_ (0 ms)
+[----------] 1 test from PrintStopsForBusTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test case ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"PrintStopsForBusTest.ThereAreBusesForStops_" end time: Nov 22 09:52 +03
+"PrintStopsForBusTest.ThereAreBusesForStops_" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Nov 22 09:52 +03

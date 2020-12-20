@@ -1,0 +1,1 @@
+/usr/bin/c++     CMakeFiles/log_makros.dir/main.cpp.o  -o log_makros liblog_makros_lib.a 

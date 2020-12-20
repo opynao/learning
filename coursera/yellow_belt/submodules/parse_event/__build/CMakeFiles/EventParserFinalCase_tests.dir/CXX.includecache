@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/parse_event.h
+string
+-
+iostream
+-
+
+/home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/submodulesFinalCaseTESTS/EventParserFinalCase/tests/parse_event_test.cpp
+parse_event.h
+/home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/submodulesFinalCaseTESTS/EventParserFinalCase/tests/parse_event.h
+gtest/gtest.h
+/home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/submodulesFinalCaseTESTS/EventParserFinalCase/tests/gtest/gtest.h
+sstream
+-
+vector
+-
+string
+-
+
