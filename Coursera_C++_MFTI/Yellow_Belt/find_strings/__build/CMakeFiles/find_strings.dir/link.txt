@@ -1,1 +1,0 @@
-/usr/bin/c++     CMakeFiles/find_strings.dir/main.cpp.o  -o find_strings libfind_strings_lib.a 

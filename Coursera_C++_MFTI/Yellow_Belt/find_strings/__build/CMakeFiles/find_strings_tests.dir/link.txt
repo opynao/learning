@@ -1,1 +1,0 @@
-/usr/bin/c++     CMakeFiles/find_strings_tests.dir/tests/find_started_from_char_test.cpp.o  -o find_strings_tests /usr/lib/x86_64-linux-gnu/libgtest.a /usr/lib/x86_64-linux-gnu/libgtest_main.a libfind_strings_lib.a /usr/lib/x86_64-linux-gnu/libgtest.a -lpthread 

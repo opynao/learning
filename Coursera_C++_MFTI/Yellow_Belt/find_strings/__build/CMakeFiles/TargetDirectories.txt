@@ -1,6 +1,0 @@
-/home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/find_strings/__build/CMakeFiles/rebuild_cache.dir
-/home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/find_strings/__build/CMakeFiles/edit_cache.dir
-/home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/find_strings/__build/CMakeFiles/find_strings_tests.dir
-/home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/find_strings/__build/CMakeFiles/test.dir
-/home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/find_strings/__build/CMakeFiles/find_strings_lib.dir
-/home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/find_strings/__build/CMakeFiles/find_strings.dir

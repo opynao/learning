@@ -1,5 +1,0 @@
-Parser.OneNumber_OneOperation 4 0
-Parser.OneNumber_OneOperation2 0 0
----
-Parser.OneNumber_OneOperation
-Parser.OneNumber_OneOperation2

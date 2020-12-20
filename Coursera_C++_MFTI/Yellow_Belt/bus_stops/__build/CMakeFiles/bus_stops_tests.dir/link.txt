@@ -1,1 +1,0 @@
-/usr/bin/clang++     CMakeFiles/bus_stops_tests.dir/tests/bus_stops_tests.cpp.o  -o bus_stops_tests /usr/lib/x86_64-linux-gnu/libgtest.a /usr/lib/x86_64-linux-gnu/libgtest_main.a libbus_stops_lib.a /usr/lib/x86_64-linux-gnu/libgtest.a -lpthread 

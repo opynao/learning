@@ -1,5 +1,0 @@
-if(EXISTS "/home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/find_strings/__build/find_strings_tests[1]_tests.cmake")
-  include("/home/vika/Learning/Coursera_C++_MFTI/Yellow_Belt/find_strings/__build/find_strings_tests[1]_tests.cmake")
-else()
-  add_test(find_strings_tests_NOT_BUILT find_strings_tests_NOT_BUILT)
-endif()
