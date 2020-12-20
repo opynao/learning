@@ -1,1 +1,0 @@
-/usr/bin/c++     CMakeFiles/testPhoneNumber.dir/PhoneNumberTests.cpp.o  -o testPhoneNumber ../libphoneNumber_lib.a 

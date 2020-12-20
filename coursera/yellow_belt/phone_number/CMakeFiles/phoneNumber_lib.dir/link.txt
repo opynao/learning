@@ -1,2 +1,0 @@
-/usr/bin/ar qc libphoneNumber_lib.a  CMakeFiles/phoneNumber_lib.dir/phone_number.cpp.o
-/usr/bin/ranlib libphoneNumber_lib.a
