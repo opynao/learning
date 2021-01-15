@@ -4,24 +4,33 @@
 #include <utility>
 #include <iterator>
 
+#ifndef ETALON
 void ReadingManager::Read(int user_id, int page_count) 
 {
-  if ( m_UsersPages.count( user_id ) )
-    m_Pages.erase( m_Pages.find( m_UsersPages[user_id] ) );
-  
-  m_UsersPages[user_id] = page_count;
-  m_Pages.insert( page_count );
+  m_Users.insert(user_id);
+  if( !page_count )
+    return;
+  auto& userPage = m_UsersPages[ user_id ];
+  if( userPage )
+    --m_PageUsers[ userPage ];
+      
+  userPage = page_count;
+  ++m_PageUsers[ userPage ];
 }
 
 double ReadingManager::Cheer(int user_id) const
 {
-  const auto itUserPages = m_UsersPages.find(user_id);
-  if( itUserPages == m_UsersPages.cend() )
+  const auto& userPage = m_UsersPages[user_id];
+  if( userPage == 0 )
     return {};
 
-  if( m_UsersPages.size() == 1 )
+  if( m_Users.size() == 1 )
     return 1.0;
-  
-  const auto itLess = m_Pages.lower_bound( itUserPages->second );
-  return ( std::distance(m_Pages.cbegin(), itLess)/static_cast<double>(m_UsersPages.size() - 1) );
+ 
+ size_t size {};
+ for( size_t i = 1; i != userPage; ++i )
+    size += m_PageUsers[i];
+
+  return static_cast<double>(size)/static_cast<double>( m_Users.size() - 1);
 }
+#endif

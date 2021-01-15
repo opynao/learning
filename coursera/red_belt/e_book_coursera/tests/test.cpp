@@ -6,7 +6,6 @@ class ReadingManagerTest : public ::testing::Test
 protected:
   void SetUp() override
   {
-    os.str("");
   }
  ReadingManager rm;
  std::ostringstream os;
@@ -82,22 +81,5 @@ TEST_F( ReadingManagerTest, UniquePerson3 )
   Parser pr( is, os, rm );
   pr.Parse();
   EXPECT_EQ( os.str(), "0\n0\n" );
-}
-
-TEST_F( ReadingManagerTest, SomePersonsReadZeroPages )
-{
-  std::istringstream is("5\nREAD 1 0\nREAD 2 0\nREAD 3 0\nREAD 4 1\nCHEER 4\n");
-  Parser pr( is, os, rm );
-  pr.Parse();
-  EXPECT_EQ( os.str(), "1\n" );
-
-}
-
-TEST_F( ReadingManagerTest, UniquePerson4 )
-{
-  std::istringstream is("5\nREAD 1 0\nREAD 1 5\nREAD 2 4\nREAD 3 7\nCHEER 1\n");
-  Parser pr( is, os, rm );
-  pr.Parse();
-  EXPECT_EQ( os.str(), "1\n" );
 }
 
