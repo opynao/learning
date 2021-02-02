@@ -1,5 +1,9 @@
 #include "stack_vector.h"
 #include "gtest/gtest.h"
+#include "profile.h"
+
+
+LOG_DURATION("total test");
 
 TEST( TestConstruction, Test1 )
 {

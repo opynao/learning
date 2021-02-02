@@ -1,0 +1,1 @@
+/usr/bin/clang++  -g   CMakeFiles/text_editor_tests.dir/tests/test.cpp.o  -o text_editor_tests /usr/lib/x86_64-linux-gnu/libgtest.a /usr/lib/x86_64-linux-gnu/libgtest_main.a libtext_editor_lib.a /usr/lib/x86_64-linux-gnu/libgtest.a -lpthread 

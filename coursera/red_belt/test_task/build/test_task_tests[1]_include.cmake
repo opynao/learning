@@ -1,0 +1,5 @@
+if(EXISTS "/home/vika/learning/coursera/red_belt/test_task/build/test_task_tests[1]_tests.cmake")
+  include("/home/vika/learning/coursera/red_belt/test_task/build/test_task_tests[1]_tests.cmake")
+else()
+  add_test(test_task_tests_NOT_BUILT test_task_tests_NOT_BUILT)
+endif()

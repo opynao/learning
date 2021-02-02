@@ -1,0 +1,22 @@
+[
+{
+  "directory": "/home/vika/learning/coursera/red_belt/text_editor/build",
+  "command": "/usr/bin/clang++   -I/home/vika/learning/coursera/red_belt/text_editor/include  -g   -Wall -Wextra -pedantic -Werror -std=gnu++17 -o CMakeFiles/text_editor_lib.dir/src/clipboard.cpp.o -c /home/vika/learning/coursera/red_belt/text_editor/src/clipboard.cpp",
+  "file": "/home/vika/learning/coursera/red_belt/text_editor/src/clipboard.cpp"
+},
+{
+  "directory": "/home/vika/learning/coursera/red_belt/text_editor/build",
+  "command": "/usr/bin/clang++   -I/home/vika/learning/coursera/red_belt/text_editor/include  -g   -Wall -Wextra -pedantic -Werror -std=gnu++17 -o CMakeFiles/text_editor_lib.dir/src/text_editor.cpp.o -c /home/vika/learning/coursera/red_belt/text_editor/src/text_editor.cpp",
+  "file": "/home/vika/learning/coursera/red_belt/text_editor/src/text_editor.cpp"
+},
+{
+  "directory": "/home/vika/learning/coursera/red_belt/text_editor/build",
+  "command": "/usr/bin/clang++   -I/home/vika/learning/coursera/red_belt/text_editor/include  -g   -Wall -Wextra -pedantic -Werror -std=gnu++17 -o CMakeFiles/text_editor_tests.dir/tests/test.cpp.o -c /home/vika/learning/coursera/red_belt/text_editor/tests/test.cpp",
+  "file": "/home/vika/learning/coursera/red_belt/text_editor/tests/test.cpp"
+},
+{
+  "directory": "/home/vika/learning/coursera/red_belt/text_editor/build",
+  "command": "/usr/bin/clang++   -I/home/vika/learning/coursera/red_belt/text_editor/include  -g   -Wall -Wextra -pedantic -Werror -std=gnu++17 -o CMakeFiles/text_editor.dir/main.cpp.o -c /home/vika/learning/coursera/red_belt/text_editor/main.cpp",
+  "file": "/home/vika/learning/coursera/red_belt/text_editor/main.cpp"
+}
+]

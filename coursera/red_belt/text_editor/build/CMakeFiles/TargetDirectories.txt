@@ -1,0 +1,6 @@
+/home/vika/learning/coursera/red_belt/text_editor/build/CMakeFiles/rebuild_cache.dir
+/home/vika/learning/coursera/red_belt/text_editor/build/CMakeFiles/test.dir
+/home/vika/learning/coursera/red_belt/text_editor/build/CMakeFiles/edit_cache.dir
+/home/vika/learning/coursera/red_belt/text_editor/build/CMakeFiles/text_editor_lib.dir
+/home/vika/learning/coursera/red_belt/text_editor/build/CMakeFiles/text_editor_tests.dir
+/home/vika/learning/coursera/red_belt/text_editor/build/CMakeFiles/text_editor.dir

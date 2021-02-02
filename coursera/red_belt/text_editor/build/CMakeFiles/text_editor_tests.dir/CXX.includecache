@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/profile.h
+chrono
+-
+iostream
+-
+string
+-
+
+../include/text_editor.h
+string
+-
+algorithm
+-
+iterator
+-
+iostream
+-
+list
+-
+
+/home/vika/learning/coursera/red_belt/text_editor/tests/test.cpp
+gtest/gtest.h
+/home/vika/learning/coursera/red_belt/text_editor/tests/gtest/gtest.h
+text_editor.h
+/home/vika/learning/coursera/red_belt/text_editor/tests/text_editor.h
+profile.h
+/home/vika/learning/coursera/red_belt/text_editor/tests/profile.h
+random
+-
+

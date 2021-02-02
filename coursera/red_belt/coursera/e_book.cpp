@@ -63,12 +63,6 @@ double ReadingManager::Cheer(int user_id) const
   return static_cast<double>(size)/static_cast<double>( m_Users.size() - 1);
 }
 
-enum class QueryType
-{
-  READ,
-  CHEER
-};
-
 class Parser
 {
 public:
@@ -82,12 +76,7 @@ public:
 private:
   std::istream& m_is;
   std::ostream& m_os;
-  ReadingManager& m_rm;
-  std::map< std::string, QueryType > m
-  {
-    { "READ", QueryType::READ },
-    { "CHEER", QueryType::CHEER }
-  };
+  ReadingManager m_rm;
 };
 
 void Parser::Parse()
@@ -100,25 +89,19 @@ void Parser::Parse()
 
 void Parser::MakeQuery()
 {
-  std::string query_type;
-  m_is >> query_type;
-  int user_id;
-  m_is >> user_id;
-  
-  auto it_query = m.find(query_type);
-  
-  switch( it_query->second )
-  {
-    case QueryType::READ:
+    std::string query_type;
+    m_is >> query_type;
+    int user_id;
+    m_is >> user_id;
+    
+    if (query_type == "READ") 
+    {
       int page_count;
       m_is >> page_count;
       m_rm.Read(user_id, page_count);
-      break;
-
-    case QueryType::CHEER:
+    } 
+    else if (query_type == "CHEER") 
       m_os << std::setprecision(6) << m_rm.Cheer(user_id) << "\n";
-      break;
-  }
 }
 
 int main() 

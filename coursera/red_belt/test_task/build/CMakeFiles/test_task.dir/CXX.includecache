@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/build_sequence.h
+
+../include/fillword.h
+build_sequence.h
+../include/build_sequence.h
+string
+-
+vector
+-
+cmath
+-
+iostream
+-
+
+/home/vika/learning/coursera/red_belt/test_task/main.cpp
+fillword.h
+/home/vika/learning/coursera/red_belt/test_task/fillword.h
+

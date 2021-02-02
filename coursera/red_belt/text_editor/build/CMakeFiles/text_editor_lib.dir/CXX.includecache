@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/clipboard.h
+string_view
+-
+string
+-
+
+../include/text_editor.h
+string
+-
+algorithm
+-
+iterator
+-
+iostream
+-
+list
+-
+
+/home/vika/learning/coursera/red_belt/text_editor/src/clipboard.cpp
+clipboard.h
+/home/vika/learning/coursera/red_belt/text_editor/src/clipboard.h
+
+/home/vika/learning/coursera/red_belt/text_editor/src/text_editor.cpp
+text_editor.h
+/home/vika/learning/coursera/red_belt/text_editor/src/text_editor.h
+

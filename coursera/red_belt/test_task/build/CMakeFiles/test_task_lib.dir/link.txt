@@ -1,0 +1,2 @@
+/usr/bin/ar qc libtest_task_lib.a  CMakeFiles/test_task_lib.dir/src/build_sequence.cpp.o CMakeFiles/test_task_lib.dir/src/fillword.cpp.o CMakeFiles/test_task_lib.dir/src/parser.cpp.o
+/usr/bin/ranlib libtest_task_lib.a

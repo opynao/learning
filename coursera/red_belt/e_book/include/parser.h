@@ -23,11 +23,6 @@ private:
 
 
 #ifndef ETALON
-enum class QueryType
-{
-  READ,
-  CHEER
-};
 
 class Parser
 {
@@ -43,10 +38,5 @@ private:
   std::istream& m_is;
   std::ostream& m_os;
   ReadingManager m_rm;
-  std::map< std::string, QueryType > m
-  {
-    { "READ", QueryType::READ },
-    { "CHEER", QueryType::CHEER }
-  };
 };
 #endif

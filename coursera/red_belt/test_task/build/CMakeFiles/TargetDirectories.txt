@@ -1,0 +1,6 @@
+/home/vika/learning/coursera/red_belt/test_task/build/CMakeFiles/rebuild_cache.dir
+/home/vika/learning/coursera/red_belt/test_task/build/CMakeFiles/test.dir
+/home/vika/learning/coursera/red_belt/test_task/build/CMakeFiles/test_task_tests.dir
+/home/vika/learning/coursera/red_belt/test_task/build/CMakeFiles/test_task_lib.dir
+/home/vika/learning/coursera/red_belt/test_task/build/CMakeFiles/edit_cache.dir
+/home/vika/learning/coursera/red_belt/test_task/build/CMakeFiles/test_task.dir

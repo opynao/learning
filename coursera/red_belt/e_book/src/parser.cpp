@@ -2,6 +2,7 @@
 #include <iomanip>
 
 using namespace std;
+
 #ifdef ETALON
 void Parser::Parse()
 {
@@ -42,19 +43,13 @@ void Parser::MakeQuery()
     int user_id;
     m_is >> user_id;
     
-    auto it_query = m.find(query_type);
-    
-    switch( it_query->second )
+    if (query_type == "READ") 
     {
-      case QueryType::READ:
-        int page_count;
-        m_is >> page_count;
-        m_rm.Read(user_id, page_count);
-        break;
-
-      case QueryType::CHEER:
-        m_os << std::setprecision(6) << m_rm.Cheer(user_id) << "\n";
-        break;
-    }
+      int page_count;
+      m_is >> page_count;
+      m_rm.Read(user_id, page_count);
+    } 
+    else if (query_type == "CHEER") 
+      m_os << std::setprecision(6) << m_rm.Cheer(user_id) << "\n";
 }
 #endif

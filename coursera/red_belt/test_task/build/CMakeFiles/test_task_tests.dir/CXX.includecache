@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/build_sequence.h
+
+../include/fillword.h
+build_sequence.h
+../include/build_sequence.h
+string
+-
+vector
+-
+cmath
+-
+iostream
+-
+
+/home/vika/learning/coursera/red_belt/test_task/tests/test_fillword.cpp
+gtest/gtest.h
+/home/vika/learning/coursera/red_belt/test_task/tests/gtest/gtest.h
+fillword.h
+/home/vika/learning/coursera/red_belt/test_task/tests/fillword.h
+vector
+-
+

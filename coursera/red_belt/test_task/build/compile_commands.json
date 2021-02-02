@@ -1,0 +1,27 @@
+[
+{
+  "directory": "/home/vika/learning/coursera/red_belt/test_task/build",
+  "command": "/usr/bin/clang++   -I/home/vika/learning/coursera/red_belt/test_task/include  -g   -Wall -Wextra -pedantic -Werror -std=gnu++17 -o CMakeFiles/test_task_tests.dir/tests/test_fillword.cpp.o -c /home/vika/learning/coursera/red_belt/test_task/tests/test_fillword.cpp",
+  "file": "/home/vika/learning/coursera/red_belt/test_task/tests/test_fillword.cpp"
+},
+{
+  "directory": "/home/vika/learning/coursera/red_belt/test_task/build",
+  "command": "/usr/bin/clang++   -I/home/vika/learning/coursera/red_belt/test_task/include  -g   -Wall -Wextra -pedantic -Werror -std=gnu++17 -o CMakeFiles/test_task_lib.dir/src/build_sequence.cpp.o -c /home/vika/learning/coursera/red_belt/test_task/src/build_sequence.cpp",
+  "file": "/home/vika/learning/coursera/red_belt/test_task/src/build_sequence.cpp"
+},
+{
+  "directory": "/home/vika/learning/coursera/red_belt/test_task/build",
+  "command": "/usr/bin/clang++   -I/home/vika/learning/coursera/red_belt/test_task/include  -g   -Wall -Wextra -pedantic -Werror -std=gnu++17 -o CMakeFiles/test_task_lib.dir/src/fillword.cpp.o -c /home/vika/learning/coursera/red_belt/test_task/src/fillword.cpp",
+  "file": "/home/vika/learning/coursera/red_belt/test_task/src/fillword.cpp"
+},
+{
+  "directory": "/home/vika/learning/coursera/red_belt/test_task/build",
+  "command": "/usr/bin/clang++   -I/home/vika/learning/coursera/red_belt/test_task/include  -g   -Wall -Wextra -pedantic -Werror -std=gnu++17 -o CMakeFiles/test_task_lib.dir/src/parser.cpp.o -c /home/vika/learning/coursera/red_belt/test_task/src/parser.cpp",
+  "file": "/home/vika/learning/coursera/red_belt/test_task/src/parser.cpp"
+},
+{
+  "directory": "/home/vika/learning/coursera/red_belt/test_task/build",
+  "command": "/usr/bin/clang++   -I/home/vika/learning/coursera/red_belt/test_task/include  -g   -Wall -Wextra -pedantic -Werror -std=gnu++17 -o CMakeFiles/test_task.dir/main.cpp.o -c /home/vika/learning/coursera/red_belt/test_task/main.cpp",
+  "file": "/home/vika/learning/coursera/red_belt/test_task/main.cpp"
+}
+]

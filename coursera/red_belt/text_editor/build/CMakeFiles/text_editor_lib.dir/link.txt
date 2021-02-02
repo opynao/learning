@@ -1,0 +1,2 @@
+/bin/ar qc libtext_editor_lib.a  CMakeFiles/text_editor_lib.dir/src/clipboard.cpp.o CMakeFiles/text_editor_lib.dir/src/text_editor.cpp.o
+/bin/ranlib libtext_editor_lib.a

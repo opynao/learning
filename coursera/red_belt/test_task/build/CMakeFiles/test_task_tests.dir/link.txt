@@ -1,0 +1,1 @@
+/usr/bin/clang++     CMakeFiles/test_task_tests.dir/tests/test_fillword.cpp.o  -o test_task_tests /usr/lib/x86_64-linux-gnu/libgtest.a /usr/lib/x86_64-linux-gnu/libgtest_main.a libtest_task_lib.a /usr/lib/x86_64-linux-gnu/libgtest.a -lpthread 

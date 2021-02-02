@@ -1,0 +1,1 @@
+/usr/bin/clang++  -g   CMakeFiles/text_editor.dir/main.cpp.o  -o text_editor libtext_editor_lib.a 

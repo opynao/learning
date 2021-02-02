@@ -23,7 +23,7 @@ double ReadingManager::Cheer(int user_id) const
   const auto& userPage = m_UsersPages[user_id];
   if( userPage == 0 )
     return {};
-
+  
   if( m_Users.size() == 1 )
     return 1.0;
  
@@ -31,6 +31,6 @@ double ReadingManager::Cheer(int user_id) const
  for( size_t i = 1; i != userPage; ++i )
     size += m_PageUsers[i];
 
-  return static_cast<double>(size)/static_cast<double>( m_Users.size() - 1);
+  return static_cast<double>(size)/static_cast<double>( m_Users.size() - 1 );
 }
 #endif
