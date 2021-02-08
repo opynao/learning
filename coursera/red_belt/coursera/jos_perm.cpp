@@ -1,4 +1,3 @@
-#include <cstdint>
 #include <iterator>
 #include <numeric>
 #include <vector>
@@ -8,6 +7,7 @@
 #include <list>
 #include <utility>
 #include <iterator>
+#include <sstream>
 
 #define PR(x) std::cerr << #x << " = " << x << std::endl
 #define LOGF std::cerr << __FUNCTION__ << " " << __LINE__ << std::endl
@@ -72,9 +72,11 @@ std::list<typename RandomIt::value_type> MoveRangeToPool ( RandomIt first, Rando
   return pool;
 }
 
+
 struct NoncopyableInt 
 {
   int value;
+
   NoncopyableInt(int value) 
     : value(value) 
   {}
@@ -98,3 +100,7 @@ std::ostream& operator << (std::ostream& os, const NoncopyableInt& v)
   return os << v.value;
 }
 
+int main()
+{
+  return 0;
+}

@@ -1,6 +1,7 @@
 #include "gtest/gtest.h"
 #include "josephus_perm.h"
 #include <vector>
+#include <iostream>
 
 std::vector<int> MakeTestVector() 
 {
@@ -45,3 +46,28 @@ TEST( TestAvoidsCopying, Test2 )
 
   EXPECT_EQ(numbers, expected);
 }
+
+TEST( Test, Test3 )
+{
+  std::vector< int > numbers { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+  MakeJosephusPermutation( std::begin(numbers), std::end(numbers), 2 );
+  std::vector< int > result { 1, 3, 5, 7, 9, 2, 6, 10, 8, 4 };
+  EXPECT_EQ( numbers, result );
+}
+
+TEST( EmptyVector, Test4)
+{
+  std::vector< int > numbers {};
+  MakeJosephusPermutation( std::begin( numbers), std::end( numbers), 3);
+  std::vector< int > result {};
+  EXPECT_EQ( numbers, result );
+}
+
+TEST( Test, Test5 )
+{
+  std::vector< int > numbers { 1, 2, 3, 4 };
+  MakeJosephusPermutation( std::begin(numbers), std::end(numbers), 5 );
+  std::vector< int > result { 1, 3, 4, 2 };
+  EXPECT_EQ( numbers, result );
+}
+

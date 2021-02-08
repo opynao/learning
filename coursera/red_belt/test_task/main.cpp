@@ -1,4 +1,5 @@
-#include "fillword.h"
+#include "letters_sequence.h"
+#include "parser.h"
 
 int main()
 {
