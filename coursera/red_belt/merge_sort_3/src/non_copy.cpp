@@ -1,18 +1,18 @@
 #include "non_copy.h"
 #include <iostream>
-
+/*
 Noncopyable::Noncopyable( const int value )
   : value_( value )
 {
   std::cout << "copy in construct\n";
 }
-/*
+*/
 Noncopyable::Noncopyable( int&& value )
   : value_( std::move(value) )
 {
-   std::cout << "move in construct\n";
+   std::cout << "Move int\n";
 }
-*/
+
 Noncopyable::Noncopyable( const Noncopyable& other) 
   : value_ { other.value_ }
 {
@@ -30,6 +30,7 @@ Noncopyable::Noncopyable( Noncopyable&& other)
   : value_ { std::move( other.value_ ) }
 {
   std::cout << "Move ctor\n";
+  ++countMoveCtor;
 }
 
 Noncopyable& Noncopyable::operator=( Noncopyable&& other )
@@ -44,6 +45,11 @@ int Noncopyable::GetValue() const
   return value_;
 }
 
+int Noncopyable::GetCountMoveCtor() const
+{
+  return countMoveCtor;
+}
+
 bool operator == ( const Noncopyable& lhs, const Noncopyable& rhs )
 {
   return lhs.GetValue() == rhs.GetValue();
@@ -53,3 +59,6 @@ bool operator < ( const Noncopyable& lhs, const Noncopyable& rhs )
 {
   return lhs.GetValue() < rhs.GetValue();
 }
+
+int Noncopyable::countMoveCtor {};
+

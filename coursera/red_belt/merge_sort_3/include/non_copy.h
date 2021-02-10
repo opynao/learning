@@ -5,9 +5,9 @@ class Noncopyable
 public:
   Noncopyable() = default;
 
-  Noncopyable( const int value );
+//  Noncopyable( const int value );
   
-//  Noncopyable( int&& value );
+  Noncopyable( int&& value );
 
   Noncopyable( const Noncopyable& other); 
 
@@ -19,8 +19,11 @@ public:
 
   int GetValue() const;
 
+  int GetCountMoveCtor() const;
+
 private:
-  int value_ {};
+ static int countMoveCtor;
+ int value_ {};
 };
 
 bool operator == ( const Noncopyable& lhs, const Noncopyable& rhs );
