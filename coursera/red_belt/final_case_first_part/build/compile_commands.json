@@ -1,0 +1,22 @@
+[
+{
+  "directory": "/home/vika/learning/coursera/red_belt/final_case_first_part/build",
+  "command": "/usr/bin/clang++   -I/home/vika/learning/coursera/red_belt/final_case_first_part/include  -g   -Wall -Wextra -pedantic -Werror -std=gnu++17 -o CMakeFiles/final_case_first_part_tests.dir/tests/test.cpp.o -c /home/vika/learning/coursera/red_belt/final_case_first_part/tests/test.cpp",
+  "file": "/home/vika/learning/coursera/red_belt/final_case_first_part/tests/test.cpp"
+},
+{
+  "directory": "/home/vika/learning/coursera/red_belt/final_case_first_part/build",
+  "command": "/usr/bin/clang++   -I/home/vika/learning/coursera/red_belt/final_case_first_part/include  -g   -Wall -Wextra -pedantic -Werror -std=gnu++17 -o CMakeFiles/final_case_first_part_lib.dir/src/parse.cpp.o -c /home/vika/learning/coursera/red_belt/final_case_first_part/src/parse.cpp",
+  "file": "/home/vika/learning/coursera/red_belt/final_case_first_part/src/parse.cpp"
+},
+{
+  "directory": "/home/vika/learning/coursera/red_belt/final_case_first_part/build",
+  "command": "/usr/bin/clang++   -I/home/vika/learning/coursera/red_belt/final_case_first_part/include  -g   -Wall -Wextra -pedantic -Werror -std=gnu++17 -o CMakeFiles/final_case_first_part_lib.dir/src/search_server.cpp.o -c /home/vika/learning/coursera/red_belt/final_case_first_part/src/search_server.cpp",
+  "file": "/home/vika/learning/coursera/red_belt/final_case_first_part/src/search_server.cpp"
+},
+{
+  "directory": "/home/vika/learning/coursera/red_belt/final_case_first_part/build",
+  "command": "/usr/bin/clang++   -I/home/vika/learning/coursera/red_belt/final_case_first_part/include  -g   -Wall -Wextra -pedantic -Werror -std=gnu++17 -o CMakeFiles/final_case_first_part.dir/main.cpp.o -c /home/vika/learning/coursera/red_belt/final_case_first_part/main.cpp",
+  "file": "/home/vika/learning/coursera/red_belt/final_case_first_part/main.cpp"
+}
+]

@@ -1,0 +1,1 @@
+/usr/bin/clang++  -O3 -DNDEBUG   CMakeFiles/final_case_first_part_tests.dir/tests/test.cpp.o  -o final_case_first_part_tests /usr/lib/x86_64-linux-gnu/libgtest.a /usr/lib/x86_64-linux-gnu/libgtest_main.a libfinal_case_first_part_lib.a /usr/lib/x86_64-linux-gnu/libgtest.a -lpthread 

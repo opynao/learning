@@ -1,0 +1,6 @@
+/home/vika/learning/coursera/red_belt/final_case_first_part/build/CMakeFiles/edit_cache.dir
+/home/vika/learning/coursera/red_belt/final_case_first_part/build/CMakeFiles/rebuild_cache.dir
+/home/vika/learning/coursera/red_belt/final_case_first_part/build/CMakeFiles/final_case_first_part_tests.dir
+/home/vika/learning/coursera/red_belt/final_case_first_part/build/CMakeFiles/final_case_first_part_lib.dir
+/home/vika/learning/coursera/red_belt/final_case_first_part/build/CMakeFiles/test.dir
+/home/vika/learning/coursera/red_belt/final_case_first_part/build/CMakeFiles/final_case_first_part.dir

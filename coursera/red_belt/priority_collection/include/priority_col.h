@@ -6,17 +6,40 @@
 #include <iterator>
 #include <set>
 #include <utility>
+#include <map>
 
 template <typename T>
 class PriorityCollection 
 {
 public:
-  using Id = std::<set>::iterator;
+  using Id = typename std::multiset< Node<T>>::const_pointer;
+  using It = typename std::multiset< Node<T>>::iterator;
 
 public:
-  Id Add(T object)
+  Id Add(T object) 
+  { 
+     It itInsert = prioritySet.insert( std::move( object ) );
+     Id idInsert = &(*itInsert);
+     idToIt[ idInsert ] = itInsert;
+     return idInsert;
+  }
+ 
+  bool IsValid(Id id) const 
+  { 
+    return idToIt.find( id ) != idToIt.cend();  
+  }
+  
+  void Promote(Id id) 
   {
-    return prioritySet.insert( std::move( object ) );
+    auto nh = prioritySet.extract( idToIt[id] );
+    nh.value().IncreasePriority();
+    It itInsert = prioritySet.insert( std::move( nh.value() ) );
+    idToIt[id] = itInsert;
+  }
+
+  const T& Get(Id id) const 
+  { 
+    return (*id).GetValue(); 
   }
 
   template <typename ObjInputIt, typename IdOutputIt>
@@ -24,114 +47,24 @@ public:
            IdOutputIt ids_begin)
   {
     for( ; range_begin != range_end; ++range_begin )
-    {
-      ids_begin = prioritySet.insert( *std::make_move_iterator( range_begin ) );
-      ++ids_begin;
-    }
+      *(ids_begin++) = Add( std::move( *range_begin ) );
   }
 
-  // Определить, принадлежит ли идентификатор какому-либо
-  // хранящемуся в контейнере объекту
-  bool IsValid(Id id) const
+  std::pair<const T&, int> GetMax() const
   {
-    return prioritySet.find( *id ) == prioritySet.cend() ? false : true;
+    auto itMax = std::prev( prioritySet.cend() );
+    return { itMax->GetValue() , itMax->GetPriority() };
   }
-
-  const T& Get(Id id) const
+  
+  std::pair<T, int> PopMax()
   {
-    if( IsValid )
-      return *prioritySet.find( *id );
-    else
-      return;
+    auto itMax = std::prev( prioritySet.cend() );
+    auto nh = prioritySet.extract( itMax );
+    idToIt.erase( &(*itMax) );
+    return { std::move( const_cast<T&>(nh.value().GetValue() ) ), std::move( nh.value().GetPriority() ) };
   }
-
-  void Promote(Id id)
-  {
-    if( IsValid )
-      (*prioritySet.find( *id )).IncreasePriority();
-    else
-      return;
-  }
-
-  // Получить объект с максимальным приоритетом и его приоритет
-  pair<const T&, int> GetMax() const
-  {
-
-  }
-
-  // Аналогично GetMax, но удаляет элемент из контейнера
-  pair<T, int> PopMax();
 
 private:
-  std::multiset< Priority > prioritySet;// Приватные поля и методы
+  std::map< Id, It > idToIt;
+  std::multiset< Node<T> > prioritySet;
 };
-
-template <typename T>
-Id Add(T object)
-{
-  return prioritySet.insert( std::move( object ) );
-}
-
-template <typename T>
-template <typename ObjInputIt, typename IdOutputIt>
-void Add(ObjInputIt range_begin, ObjInputIt range_end,
-         IdOutputIt ids_begin)
-{
-  for( ; range_begin != range_end; ++range_begin )
-  {
-    ids_begin = prioritySet.insert( *std::make_move_iterator( range_begin ) );
-    ++ids_begin;
-  }
-}
-
-template <typename T>
-bool IsValid(Id id) const
-{
-  return prioritySet.find( *id ) == prioritySet.cend() ? false : true;
-}
-
-template <typename T>
-const T& Get(Id id) const
-{
-  if( IsValid )
-    return *prioritySet.find( *id );
-  else
-    return;
-}
-
-template <typename T>
-void Promote(Id id)
-{
-    if( IsValid )
-      (*prioritySet.find( *id )).IncreasePriority();
-    else
-      return;
-  }
-
-template <typename T>
-pair<const T&, int> GetMax() const
-{
-  if( !prioritySet.empty() )
-  {
-    auto elem = *std::max_element( std::begin( prioritySet ), std::end( prioritySet ))
-    return { elem.GetValue(), elem.GetPriority() };
-  }
-  else
-    return;
-}
-
-template <typename T>
-pair<T, int> PopMax()
-{
-/*  if( !prioritySet.empty() )
-  {
-    auto elem = std::max_element( std::begin( prioritySet ), std::end( prioritySet ));
-    return prioritySet.extract( elem )
-  }
-  else
-    return;
-    */
-  return {};
-}
-
-

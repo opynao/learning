@@ -1,4 +1,4 @@
-#include "pririty_col.h"
+#include "priority_col.h"
 
 int main() 
 {

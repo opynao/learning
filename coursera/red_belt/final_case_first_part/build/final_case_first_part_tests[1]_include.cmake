@@ -1,0 +1,5 @@
+if(EXISTS "/home/vika/learning/coursera/red_belt/final_case_first_part/build/final_case_first_part_tests[1]_tests.cmake")
+  include("/home/vika/learning/coursera/red_belt/final_case_first_part/build/final_case_first_part_tests[1]_tests.cmake")
+else()
+  add_test(final_case_first_part_tests_NOT_BUILT final_case_first_part_tests_NOT_BUILT)
+endif()
