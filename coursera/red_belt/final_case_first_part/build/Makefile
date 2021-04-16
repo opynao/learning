@@ -187,6 +187,33 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles/final_case_first_part.dir/build.make CMakeFiles/final_case_first_part.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+src/inverted_index.o: src/inverted_index.cpp.o
+
+.PHONY : src/inverted_index.o
+
+# target to build an object file
+src/inverted_index.cpp.o:
+	$(MAKE) -f CMakeFiles/final_case_first_part_lib.dir/build.make CMakeFiles/final_case_first_part_lib.dir/src/inverted_index.cpp.o
+.PHONY : src/inverted_index.cpp.o
+
+src/inverted_index.i: src/inverted_index.cpp.i
+
+.PHONY : src/inverted_index.i
+
+# target to preprocess a source file
+src/inverted_index.cpp.i:
+	$(MAKE) -f CMakeFiles/final_case_first_part_lib.dir/build.make CMakeFiles/final_case_first_part_lib.dir/src/inverted_index.cpp.i
+.PHONY : src/inverted_index.cpp.i
+
+src/inverted_index.s: src/inverted_index.cpp.s
+
+.PHONY : src/inverted_index.s
+
+# target to generate assembly for a file
+src/inverted_index.cpp.s:
+	$(MAKE) -f CMakeFiles/final_case_first_part_lib.dir/build.make CMakeFiles/final_case_first_part_lib.dir/src/inverted_index.cpp.s
+.PHONY : src/inverted_index.cpp.s
+
 src/parse.o: src/parse.cpp.o
 
 .PHONY : src/parse.o
@@ -241,6 +268,33 @@ src/search_server.cpp.s:
 	$(MAKE) -f CMakeFiles/final_case_first_part_lib.dir/build.make CMakeFiles/final_case_first_part_lib.dir/src/search_server.cpp.s
 .PHONY : src/search_server.cpp.s
 
+src/split_into_words.o: src/split_into_words.cpp.o
+
+.PHONY : src/split_into_words.o
+
+# target to build an object file
+src/split_into_words.cpp.o:
+	$(MAKE) -f CMakeFiles/final_case_first_part_lib.dir/build.make CMakeFiles/final_case_first_part_lib.dir/src/split_into_words.cpp.o
+.PHONY : src/split_into_words.cpp.o
+
+src/split_into_words.i: src/split_into_words.cpp.i
+
+.PHONY : src/split_into_words.i
+
+# target to preprocess a source file
+src/split_into_words.cpp.i:
+	$(MAKE) -f CMakeFiles/final_case_first_part_lib.dir/build.make CMakeFiles/final_case_first_part_lib.dir/src/split_into_words.cpp.i
+.PHONY : src/split_into_words.cpp.i
+
+src/split_into_words.s: src/split_into_words.cpp.s
+
+.PHONY : src/split_into_words.s
+
+# target to generate assembly for a file
+src/split_into_words.cpp.s:
+	$(MAKE) -f CMakeFiles/final_case_first_part_lib.dir/build.make CMakeFiles/final_case_first_part_lib.dir/src/split_into_words.cpp.s
+.PHONY : src/split_into_words.cpp.s
+
 tests/test.o: tests/test.cpp.o
 
 .PHONY : tests/test.o
@@ -283,12 +337,18 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... src/inverted_index.o"
+	@echo "... src/inverted_index.i"
+	@echo "... src/inverted_index.s"
 	@echo "... src/parse.o"
 	@echo "... src/parse.i"
 	@echo "... src/parse.s"
 	@echo "... src/search_server.o"
 	@echo "... src/search_server.i"
 	@echo "... src/search_server.s"
+	@echo "... src/split_into_words.o"
+	@echo "... src/split_into_words.i"
+	@echo "... src/split_into_words.s"
 	@echo "... tests/test.o"
 	@echo "... tests/test.i"
 	@echo "... tests/test.s"

@@ -57,9 +57,22 @@ include CMakeFiles/final_case_first_part_lib.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/final_case_first_part_lib.dir/flags.make
 
+CMakeFiles/final_case_first_part_lib.dir/src/inverted_index.cpp.o: CMakeFiles/final_case_first_part_lib.dir/flags.make
+CMakeFiles/final_case_first_part_lib.dir/src/inverted_index.cpp.o: ../src/inverted_index.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vika/learning/coursera/red_belt/final_case_first_part/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/final_case_first_part_lib.dir/src/inverted_index.cpp.o"
+	/usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/final_case_first_part_lib.dir/src/inverted_index.cpp.o -c /home/vika/learning/coursera/red_belt/final_case_first_part/src/inverted_index.cpp
+
+CMakeFiles/final_case_first_part_lib.dir/src/inverted_index.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/final_case_first_part_lib.dir/src/inverted_index.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vika/learning/coursera/red_belt/final_case_first_part/src/inverted_index.cpp > CMakeFiles/final_case_first_part_lib.dir/src/inverted_index.cpp.i
+
+CMakeFiles/final_case_first_part_lib.dir/src/inverted_index.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/final_case_first_part_lib.dir/src/inverted_index.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vika/learning/coursera/red_belt/final_case_first_part/src/inverted_index.cpp -o CMakeFiles/final_case_first_part_lib.dir/src/inverted_index.cpp.s
+
 CMakeFiles/final_case_first_part_lib.dir/src/parse.cpp.o: CMakeFiles/final_case_first_part_lib.dir/flags.make
 CMakeFiles/final_case_first_part_lib.dir/src/parse.cpp.o: ../src/parse.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vika/learning/coursera/red_belt/final_case_first_part/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/final_case_first_part_lib.dir/src/parse.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vika/learning/coursera/red_belt/final_case_first_part/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/final_case_first_part_lib.dir/src/parse.cpp.o"
 	/usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/final_case_first_part_lib.dir/src/parse.cpp.o -c /home/vika/learning/coursera/red_belt/final_case_first_part/src/parse.cpp
 
 CMakeFiles/final_case_first_part_lib.dir/src/parse.cpp.i: cmake_force
@@ -72,7 +85,7 @@ CMakeFiles/final_case_first_part_lib.dir/src/parse.cpp.s: cmake_force
 
 CMakeFiles/final_case_first_part_lib.dir/src/search_server.cpp.o: CMakeFiles/final_case_first_part_lib.dir/flags.make
 CMakeFiles/final_case_first_part_lib.dir/src/search_server.cpp.o: ../src/search_server.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vika/learning/coursera/red_belt/final_case_first_part/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/final_case_first_part_lib.dir/src/search_server.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vika/learning/coursera/red_belt/final_case_first_part/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/final_case_first_part_lib.dir/src/search_server.cpp.o"
 	/usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/final_case_first_part_lib.dir/src/search_server.cpp.o -c /home/vika/learning/coursera/red_belt/final_case_first_part/src/search_server.cpp
 
 CMakeFiles/final_case_first_part_lib.dir/src/search_server.cpp.i: cmake_force
@@ -83,19 +96,36 @@ CMakeFiles/final_case_first_part_lib.dir/src/search_server.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/final_case_first_part_lib.dir/src/search_server.cpp.s"
 	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vika/learning/coursera/red_belt/final_case_first_part/src/search_server.cpp -o CMakeFiles/final_case_first_part_lib.dir/src/search_server.cpp.s
 
+CMakeFiles/final_case_first_part_lib.dir/src/split_into_words.cpp.o: CMakeFiles/final_case_first_part_lib.dir/flags.make
+CMakeFiles/final_case_first_part_lib.dir/src/split_into_words.cpp.o: ../src/split_into_words.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vika/learning/coursera/red_belt/final_case_first_part/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/final_case_first_part_lib.dir/src/split_into_words.cpp.o"
+	/usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/final_case_first_part_lib.dir/src/split_into_words.cpp.o -c /home/vika/learning/coursera/red_belt/final_case_first_part/src/split_into_words.cpp
+
+CMakeFiles/final_case_first_part_lib.dir/src/split_into_words.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/final_case_first_part_lib.dir/src/split_into_words.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vika/learning/coursera/red_belt/final_case_first_part/src/split_into_words.cpp > CMakeFiles/final_case_first_part_lib.dir/src/split_into_words.cpp.i
+
+CMakeFiles/final_case_first_part_lib.dir/src/split_into_words.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/final_case_first_part_lib.dir/src/split_into_words.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vika/learning/coursera/red_belt/final_case_first_part/src/split_into_words.cpp -o CMakeFiles/final_case_first_part_lib.dir/src/split_into_words.cpp.s
+
 # Object files for target final_case_first_part_lib
 final_case_first_part_lib_OBJECTS = \
+"CMakeFiles/final_case_first_part_lib.dir/src/inverted_index.cpp.o" \
 "CMakeFiles/final_case_first_part_lib.dir/src/parse.cpp.o" \
-"CMakeFiles/final_case_first_part_lib.dir/src/search_server.cpp.o"
+"CMakeFiles/final_case_first_part_lib.dir/src/search_server.cpp.o" \
+"CMakeFiles/final_case_first_part_lib.dir/src/split_into_words.cpp.o"
 
 # External object files for target final_case_first_part_lib
 final_case_first_part_lib_EXTERNAL_OBJECTS =
 
+libfinal_case_first_part_lib.a: CMakeFiles/final_case_first_part_lib.dir/src/inverted_index.cpp.o
 libfinal_case_first_part_lib.a: CMakeFiles/final_case_first_part_lib.dir/src/parse.cpp.o
 libfinal_case_first_part_lib.a: CMakeFiles/final_case_first_part_lib.dir/src/search_server.cpp.o
+libfinal_case_first_part_lib.a: CMakeFiles/final_case_first_part_lib.dir/src/split_into_words.cpp.o
 libfinal_case_first_part_lib.a: CMakeFiles/final_case_first_part_lib.dir/build.make
 libfinal_case_first_part_lib.a: CMakeFiles/final_case_first_part_lib.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/vika/learning/coursera/red_belt/final_case_first_part/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX static library libfinal_case_first_part_lib.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/vika/learning/coursera/red_belt/final_case_first_part/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX static library libfinal_case_first_part_lib.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/final_case_first_part_lib.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/final_case_first_part_lib.dir/link.txt --verbose=$(VERBOSE)
 

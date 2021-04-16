@@ -1,8 +1,8 @@
 #include "explore.h"
-#include "paginate.h"
 
 #include <future>
 #include <functional>
+#include <queue>
 
 void Stats::operator+=(const Stats &other)
 {
@@ -12,38 +12,33 @@ void Stats::operator+=(const Stats &other)
 
 Stats ExploreKeyWords(const std::set<std::string> &key_words, std::istream &input)
 {
-  LOGF;
   std::vector<std::future<Stats>> futures;
-  std::vector<std::string> inputStr;
-  //std::vector<std::vector<std::string>> strings;
+  std::deque<std::string> inputStr;
   Stats stats;
-  LOGF;
+  std::string line{};
 
-  for (std::string line; getline(input, line);)
+  while (input >> line)
+    inputStr.push_back(std::move(line));
+  
+  size_t bunch_size = inputStr.size() / 4;
+  std::vector<std::vector<std::string>> strings{};
+  strings.reserve(5);
+  
+  std::vector<std::string> vec{};
+  vec.reserve(bunch_size);
+  
+  for (size_t i = 0; i < inputStr.size(); i += bunch_size)
   {
-    LOGF;
-    inputStr.push_back(line);
+    auto last = std::min(inputStr.size(), i + bunch_size);
+    std::move(inputStr.begin() + i, inputStr.begin() + last, back_inserter(vec));
+    strings.push_back(vec);
+    vec.clear();
   }
-  LOGF;
-/*  for(size_t i = 0; i != inputStr.size()/4; ++i )
-  {
-    strings.
-  }*/
-  size_t pageSize = 1000;
-  for (auto string : Paginate(inputStr, pageSize))
-  {
-    LOGF;
-    futures.push_back(std::async([=] { return ExploreKeyWordsSingleThread(key_words, string); }));
-  }
-  LOGF;
+  for (auto& string : strings)
+    futures.push_back(std::async([=] { return ExploreKeyWordsSingleThread(std::ref(key_words), string); }));
 
   for (auto &future : futures)
-  {
-    LOGF;
     stats += future.get();
-    LOGF;
-  }
-  LOGF;
 
   return stats;
 }

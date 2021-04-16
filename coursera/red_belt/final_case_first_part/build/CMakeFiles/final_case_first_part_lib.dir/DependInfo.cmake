@@ -4,8 +4,10 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/home/vika/learning/coursera/red_belt/final_case_first_part/src/inverted_index.cpp" "/home/vika/learning/coursera/red_belt/final_case_first_part/build/CMakeFiles/final_case_first_part_lib.dir/src/inverted_index.cpp.o"
   "/home/vika/learning/coursera/red_belt/final_case_first_part/src/parse.cpp" "/home/vika/learning/coursera/red_belt/final_case_first_part/build/CMakeFiles/final_case_first_part_lib.dir/src/parse.cpp.o"
   "/home/vika/learning/coursera/red_belt/final_case_first_part/src/search_server.cpp" "/home/vika/learning/coursera/red_belt/final_case_first_part/build/CMakeFiles/final_case_first_part_lib.dir/src/search_server.cpp.o"
+  "/home/vika/learning/coursera/red_belt/final_case_first_part/src/split_into_words.cpp" "/home/vika/learning/coursera/red_belt/final_case_first_part/build/CMakeFiles/final_case_first_part_lib.dir/src/split_into_words.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "Clang")
 

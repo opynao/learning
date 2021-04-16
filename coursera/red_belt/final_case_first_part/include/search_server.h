@@ -1,60 +1,91 @@
 #pragma once
 
-#include <istream>
-#include <ostream>
-#include <set>
-#include <list>
+#include "inverted_index.h"
+#include "synchronized.h"
+#include "profile.h"
+
+#include <iostream>
 #include <vector>
-#include <map>
 #include <string>
-#include <deque>
-using namespace std;
+#include <mutex>
+#include <condition_variable>
+#include <stack>
+#include <cassert>
 
-#define LOGF std::cerr << __FUNCTION__ << " " << __LINE__ << std::endl
+#define LOGF std::cerr << __FUNCTION__ << " " << __LINE__
 #define PR(x) std::cerr << #x << " = " << x << std::endl
-using wordOccurence_t = size_t;
-using docid_t = size_t;
+#define LOGFSTART LOGF << " " << i << " START" << std::endl
+#define LOGFEND LOGF << " " << i++ << " END" << std::endl
 
-struct Entry
+enum class State
 {
-  docid_t docid{};
-  wordOccurence_t wordOccurence{};
+  start,
+  stop
 };
 
-class InvertedIndex
+struct
 {
-public:
-  void Add(std::string &&document);
-  const vector<Entry> &Lookup(const string_view &word) const;
-
-  const string &GetDocument(size_t id) const
+  int write_;
+  int read_;
+  void write(State state)
   {
-    return docs[id];
+    if (state == State::start)
+      write_++;
+    else
+      write_--;
   }
-  size_t GetDocsNumber() const
+  void read(State state)
   {
-    return docs.size();
+    if (state == State::start)
+      read_++;
+    else
+      read_--;
   }
-
-private:
-  map<std::string_view, std::vector<Entry>> index{};
-  std::deque<string> docs{};
-};
+  void swap()
+  {
+    assert(!write_ && !read_);
+  }
+} Stack;
 
 class SearchServer
 {
 public:
+  using input_t = std::istream;
+  using output_t = std::ostream;
+  using query_t = std::string;
+  using docidCount_t = std::map<size_t, size_t>;
+  using docidPosition_t = std::vector<size_t>;
+  using words_t = std::vector<std::string_view>;
+
+public:
   SearchServer() = default;
-  explicit SearchServer(istream &document_input);
-  void UpdateDocumentBase(istream &document_input);
-  void AddQueriesStream(istream &query_input, ostream &search_results_output);
-  InvertedIndex GetIndex() const
-  {
-    return index;
-  }
+  explicit SearchServer(input_t &document_input);
+  void UpdateDocumentBase(input_t &document_input);
+  void AddQueriesStream(input_t &query_input, output_t &search_results_output);
+
+public:
+  InvertedIndex &GetIndex();
 
 private:
-  InvertedIndex index;
-};
+  static docidPosition_t CalculateDocidPosition(docidCount_t &docid_count);
+  // static void PartialSort(docidCount_t &docid_count, docidPosition_t &docid_position);
 
-std::vector<std::string_view> SplitIntoWords(std::string_view line);
+  /* void PrintResults(output_t &search_results_output,
+                    const query_t &current_query,
+                    const docidPosition_t &docid_position,
+                    docidCount_t &docid_count);*/
+  void PrintResults(output_t &search_results_output,
+                    const query_t &current_query,
+                    docidCount_t &docid_count);
+
+  docidCount_t BuildDocidWordOccurence(const words_t &words);
+  void CreateNewIndex(input_t &document_input);
+  void ClearNewIndex();
+  void FillNewIndex(input_t &document_input);
+  // void Resize(const docidCount_t &wordInfo, docidCount_t &docid_count);
+  // void Transform(const docidCount_t &wordInfo, docidCount_t &docid_count);
+
+private:
+  Synchronized<InvertedIndex> index_;
+  Synchronized<InvertedIndex> new_index_;
+};

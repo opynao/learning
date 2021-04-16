@@ -18,11 +18,11 @@ set(CMAKE_CXX_SIMULATE_VERSION "")
 
 
 
-set(CMAKE_AR "/bin/ar")
+set(CMAKE_AR "/usr/bin/ar")
 set(CMAKE_CXX_COMPILER_AR "/usr/lib/llvm-7/bin/llvm-ar")
-set(CMAKE_RANLIB "/bin/ranlib")
+set(CMAKE_RANLIB "/usr/bin/ranlib")
 set(CMAKE_CXX_COMPILER_RANLIB "/usr/lib/llvm-7/bin/llvm-ranlib")
-set(CMAKE_LINKER "/bin/ld")
+set(CMAKE_LINKER "/usr/bin/ld")
 set(CMAKE_COMPILER_IS_GNUCXX )
 set(CMAKE_CXX_COMPILER_LOADED 1)
 set(CMAKE_CXX_COMPILER_WORKS TRUE)

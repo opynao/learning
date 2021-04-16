@@ -1,7 +1,9 @@
 #include "search_server.h"
 #include "parse.h"
 #include "gtest/gtest.h"
+#include "iterator_range.h"
 #include "profile.h"
+#include "split_into_words.h"
 
 #include <algorithm>
 #include <iterator>
@@ -252,12 +254,12 @@ TEST(Duration, SplitIntoWords)
 {
   auto queries = gen_random();
   {
-    LOG_DURATION("SplitIntoWords");
+    //LOG_DURATION("SplitIntoWords");
     for (string current_query; getline(queries, current_query);)
       SplitIntoWords(current_query);
   }
 }
-
+/*
 TEST(Duration, SearchIndex)
 {
   istringstream docs_input = gen_random_doc();
@@ -266,7 +268,7 @@ TEST(Duration, SearchIndex)
   srv.UpdateDocumentBase(docs_input);
   ostringstream queries_output;
   {
-    LOG_DURATION(" Split + Search ");
+    //LOG_DURATION(" Split + Search ");
     for (string current_query; getline(queries_input, current_query);)
     {
       const auto words = SplitIntoWords(current_query);
@@ -274,13 +276,13 @@ TEST(Duration, SearchIndex)
 
       for (const auto &word : words)
       {
-        for (const auto& entry : srv.GetIndex().Lookup(word))
+        for (const auto &entry : srv.GetIndex().Lookup(word))
           docid_count[entry.docid] += entry.wordOccurence;
       }
     }
   }
 }
-
+*/
 TEST(Duration, All)
 {
   istringstream docs_input = gen_random_doc();
@@ -288,8 +290,32 @@ TEST(Duration, All)
   std::ostringstream oss{};
   SearchServer srv;
   {
-    LOG_DURATION("All");
+    //LOG_DURATION("All");
     srv.UpdateDocumentBase(docs_input);
     srv.AddQueriesStream(queries_input, oss);
   }
 }
+
+/*
+TEST(Basic, SearchServer)
+{
+
+  std::vector<std::pair<std::istringstream, std::ostringstream *>> streams;
+  streams.push_back({gen_random_doc(), {}});
+  streams.push_back({gen_random_doc(), {}});
+  // IteratorRange — шаблон из задачи Paginator
+  // random_time() — функция, которая возвращает случайный
+  // промежуток времени
+
+  LOG_DURATION("Total");
+  SearchServer srv(streams.front().first);
+  for (auto &[input, output] :
+       IteratorRange(begin(streams) + 1, end(streams)))
+  {
+    this_thread::sleep_for(std::random_time());
+    if (!output)
+      srv.UpdateDocumentBase(input);
+    else
+      srv.AddQueriesStream(input, *output);
+  }
+}*/

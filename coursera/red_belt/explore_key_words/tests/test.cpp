@@ -1,6 +1,5 @@
 #include "gtest/gtest.h"
 #include "explore.h"
-#include "paginate.h"
 
 #include <set>
 #include <string>
@@ -16,9 +15,7 @@ TEST(Test, Basic)
   ss << "10 reasons why yangle is the best IT company\n";
   ss << "yangle rocks others suck\n";
   ss << "Goondex really sucks, but yangle rocks. Use yangle\n";
-  LOGF;
   const auto stats = ExploreKeyWords(key_words, ss);
-  LOGF;
   const std::map<std::string, int> expected =
       {
           {"yangle", 6},

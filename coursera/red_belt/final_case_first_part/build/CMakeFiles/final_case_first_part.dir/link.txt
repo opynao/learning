@@ -1,1 +1,1 @@
-/usr/bin/clang++  -O3 -DNDEBUG   CMakeFiles/final_case_first_part.dir/main.cpp.o  -o final_case_first_part libfinal_case_first_part_lib.a 
+/usr/bin/clang++   -pthread -O3 -DNDEBUG   CMakeFiles/final_case_first_part.dir/main.cpp.o  -o final_case_first_part libfinal_case_first_part_lib.a 

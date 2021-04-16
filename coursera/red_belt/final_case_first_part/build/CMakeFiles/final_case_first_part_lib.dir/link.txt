@@ -1,2 +1,2 @@
-/bin/ar qc libfinal_case_first_part_lib.a  CMakeFiles/final_case_first_part_lib.dir/src/parse.cpp.o CMakeFiles/final_case_first_part_lib.dir/src/search_server.cpp.o
-/bin/ranlib libfinal_case_first_part_lib.a
+/usr/bin/ar qc libfinal_case_first_part_lib.a  CMakeFiles/final_case_first_part_lib.dir/src/inverted_index.cpp.o CMakeFiles/final_case_first_part_lib.dir/src/parse.cpp.o CMakeFiles/final_case_first_part_lib.dir/src/search_server.cpp.o CMakeFiles/final_case_first_part_lib.dir/src/split_into_words.cpp.o
+/usr/bin/ranlib libfinal_case_first_part_lib.a
