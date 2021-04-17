@@ -1,6 +1,6 @@
 #include "search_server.h"
-#include "iterator_range.h"
 #include "split_into_words.h"
+#include "concurrent_map.h"
 
 #include <condition_variable>
 #include <algorithm>
@@ -40,6 +40,7 @@ void SearchServer::FillNewIndex(input_t &document_input)
   std::vector<std::future<void>> futures;
   std::string current_document{};
   size_t docid{};
+
   for (; std::getline(document_input, current_document); ++docid)
   {
     futures.push_back(std::async([this, docid, current_document]() mutable {
@@ -48,166 +49,117 @@ void SearchServer::FillNewIndex(input_t &document_input)
     }));
   }
 }
-
+/*
 void SearchServer::AddQueriesStream(
     input_t &query_input, output_t &search_results_output)
 {
-  LOGF;
   std::vector<std::future<std::string>> futures;
 
   for (query_t current_query; std::getline(query_input, current_query);)
   {
-    futures.push_back(std::async([this,
-                                  current_query]() {
+    futures.push_back(std::async([this, current_query]() {
       const auto &words = SplitIntoWords(current_query);
-      auto docid_count = BuildDocidWordOccurence(words);
-      docidCount_t copy;
-      std::ostringstream oss;
-      //PrintResults(oss, current_query, CalculateDocidPosition(docid_count), docid_count);
-      //auto it = docid_count.begin();
-
-      //std::advance(it, std::min<size_t>(5, docid_count.size()));
-      for (size_t i = 0; i != std::min<size_t>(5, docid_count.size()); ++i)
+      const auto &docIdCount = BuildDocidWordOccurence(words);
+      std::multiset<Entry> s;
+      uint16_t count{};
+      for (const auto entry : docIdCount)
       {
-        auto it = std::max_element(docid_count.begin(), docid_count.end(), [](const auto &lhs, const auto &rhs) {
-          if (lhs.second == rhs.second)
-            return lhs.first < rhs.first;
-          return lhs.second > rhs.second;
-        });
-        copy[it->first] = it->second;
-        docid_count.erase(it);
+        if (entry)
+          s.emplace(count, entry);
+        ++count;
       }
-
-      /* std::partial_sort(docid_count.begin(), it, docid_count.end(), [](const auto &lhs, const auto &rhs) {
-        if (lhs.wordOccurence == rhs.wordOccurence)
-          return lhs.docid < rhs.docid;
-        return lhs.wordOccurence > rhs.wordOccurence;
-      });*/
-      PrintResults(oss, current_query, copy);
-      LOGF;
+      std::ostringstream oss;
+      PrintResults(oss, current_query, s);
 
       return oss.str();
     }));
   }
-  LOGF;
 
   for (auto &future : futures)
     search_results_output << future.get();
-  LOGF;
+}
+*/
+
+void SearchServer::AddQueriesStream(
+    input_t &query_input, output_t &search_results_output)
+{
+  std::vector<
+      std::future<
+          std::pair<
+              std::string,
+              std::vector<Entry>>>>
+      futures;
+
+  for (query_t current_query; std::getline(query_input, current_query);)
+  {
+    futures.push_back(std::async([this, current_query]() {
+      const auto words = SplitIntoWords(current_query);
+      docidCount_t docid_count = BuildDocidWordOccurence(words);
+
+      std::multiset<Entry> s;
+      uint16_t count{};
+      for (const auto entry : docid_count)
+      {
+        if (entry)
+          s.emplace(count, entry);
+        ++count;
+      }
+
+      std::vector<Entry> v;
+      const auto size = std::min<size_t>(5, s.size());
+      auto itEnd = std::next(s.begin(), size);
+      v.reserve(size);
+      std::move(s.begin(), itEnd, std::back_inserter(v));
+
+      return std::make_pair(current_query, v);
+    }));
+  }
+
+  for (auto &future : futures)
+  {
+    const auto &result = future.get();
+    search_results_output << result.first << ":";
+    std::for_each(
+        result.second.cbegin(), result.second.cend(),
+        [&search_results_output](const auto &pr) mutable {
+          search_results_output << " {"
+                                << "docid: " << pr.docid << ", "
+                                << "hitcount: " << pr.wordOccurence << '}';
+        });
+    search_results_output << "\n";
+  }
 }
 
-SearchServer::docidCount_t SearchServer::BuildDocidWordOccurence(
-    const std::vector<std::string_view> &words)
+docidCount_t SearchServer::BuildDocidWordOccurence(
+    const std::vector<std::string> &words)
 {
-  LOGF;
   const auto &rIndex = index_.GetAccess();
   if (words.size() == 1)
     return rIndex.ref_to_value.Lookup(*words.begin());
-
-  docidCount_t docid_count{};
+  docidCount_t docid_count;
 
   std::for_each(words.cbegin(), words.cend(), [&docid_count, &rIndex](const auto &word) {
     const auto &wordInfo = rIndex.ref_to_value.Lookup(word);
-    for (auto it = wordInfo.begin(); it != wordInfo.end(); ++it)
-    {
-   /*   auto itFind = std::find_if(docid_count.begin(), docid_count.end(),
-                                 [&it](const auto &entry) { return entry.docid == it->docid; });
-      if (itFind == docid_count.end())
-        docid_count.push_back(*it);
-      else
-        itFind->wordOccurence += it->wordOccurence;*/
-       for (auto &wordI : wordInfo)
-          docid_count[wordI.first] += wordI.second;
-      //Resize(wordInfo, docid_count);
-      //Transform(wordInfo, docid_count);
-    } });
+    if (wordInfo.size() > docid_count.size())
+      docid_count.resize(wordInfo.size());
+    for (size_t i = 0; i != wordInfo.size(); ++i)
+      docid_count[i] += wordInfo[i];
+  });
 
   return docid_count;
 }
-/*
-void SearchServer::Resize(const docidCount_t &wordInfo, docidCount_t &docid_count)
-{
-  const auto size = std::max(wordInfo.size(), docid_count.size());
-  if (docid_count.size() < size)
-    docid_count.resize(size + 1);
-}
 
-void SearchServer::Transform(const docidCount_t &wordInfo, docidCount_t &docid_count)
-{
-  std::transform(wordInfo.cbegin(),
-                 wordInfo.cbegin() + wordInfo.size(),
-                 docid_count.cbegin(),
-                 docid_count.begin(),
-                 std::plus<size_t>());
-}
-*/
-std::vector<size_t> SearchServer::CalculateDocidPosition(docidCount_t &docid_count)
-{
-  std::vector<size_t> docid_position(docid_count.size());
-  std::iota(docid_position.begin(), docid_position.end(), 0);
-  // PartialSort(docid_count, docid_position);
-  return docid_position;
-}
-/*
-void SearchServer::PartialSort(docidCount_t &docid_count, docidPosition_t &docid_position)
-{
-  auto it = docid_position.begin();
-  std::advance(it, std::min<size_t>(5, docid_count.size()));
-  std::partial_sort(docid_position.begin(), it, docid_position.end(),
-                    [&docid_count](auto lhs, auto rhs) {
-                      if (docid_count[lhs] == docid_count[rhs])
-                        return lhs < rhs;
-                      return docid_count[lhs] > docid_count[rhs];
-                    });
-}*/
-/*
-void SearchServer::PrintResults(
-    output_t &search_results_output,
-    const query_t &current_query,
-    const docidPosition_t &docid_position,
-    docidCount_t &docid_count)
+void SearchServer::PrintResults(output_t &search_results_output,
+                                const query_t &current_query,
+                                const std::multiset<Entry> &docid_count)
 {
   search_results_output << current_query << ":";
-  for (size_t i = 0; i != std::min<size_t>(5, docid_position.size()); ++i)
+  const auto itEnd = std::next(docid_count.cbegin(), std::min<size_t>(5, docid_count.size()));
+  for (auto itBegin = docid_count.begin(); itBegin != itEnd; ++itBegin)
   {
-    auto hitcount = docid_count[docid_position[i]];
-    if (hitcount)
-    {
-      search_results_output << " {"
-                            << "docid: " << docid_position[i] << ", "
-                            << "hitcount: " << hitcount << '}';
-    }
+    search_results_output << " {"
+                          << "docid: " << itBegin->docid << ", "
+                          << "hitcount: " << itBegin->wordOccurence << '}';
   }
   search_results_output << "\n";
-}
-*/
-
-void SearchServer::PrintResults(
-    output_t &search_results_output,
-    const query_t &current_query,
-    docidCount_t &docid_count)
-{
-  search_results_output << current_query << ":";
-  for (auto itBegin = docid_count.rbegin(); itBegin != docid_count.rend(); ++itBegin)
-  {
-    LOGF;
-    if (itBegin->second)
-    {
-      search_results_output << " {"
-                            << "docid: " << itBegin->first << ", "
-                            << "hitcount: " << itBegin->second << '}';
-    }
-  }
-  LOGF;
-  std::string content;
-  search_results_output << "\n";
-  std::stringstream ss;
-  ss << search_results_output.rdbuf();
-  content = ss.str();
-  PR(content);
-}
-
-InvertedIndex &SearchServer::GetIndex()
-{
-  return index_.GetAccess().ref_to_value;
 }

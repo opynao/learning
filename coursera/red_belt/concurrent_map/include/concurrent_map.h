@@ -20,32 +20,6 @@ private:
     Value &ref_to_value;
   };
 
-  /*
-  private:
-    bucket_iterator find_entry_for(const Key &key) const
-    {
-      return std::find_if(data.begin(), data.end(),
-                          [&](const bucket_values) { return item.first == key; });
-    }
-
-  public:
-    bucket_reference &value_for(const Key &key, const Value &default_value = Value()) const
-    {
-      std::shared_lock<std::shared_mutex> lock(mutex);
-      const bucket_iterator found_entry = find_entry_for(key);
-      return (found_entry == data.end()) ? default_value : found_entry->second;
-    }
-      void add_or_update_mapping(const Key &key, const Value &value)
-    {
-      std::unique_lock<std::shared_mutex> lock(mutex);
-      const bucket_iterator found_entry = find_entry_for(key);
-      if (found_entry == data.end())
-        data.push_back(bucket_value(key, value));
-      else
-        found_entry->second = value;
-    }
- };*/
-
 private:
   std::vector<std::pair<std::mutex, std::map<Key, Value>>> buckets;
 

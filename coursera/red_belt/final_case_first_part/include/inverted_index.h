@@ -7,30 +7,29 @@
 #include <string>
 #include <deque>
 #include <set>
+#include <cstdint>
 
 class InvertedIndex
 {
 public:
-    using docid_t = size_t;
-    using wordOccurence_t = size_t;
-    using wordInfo_t = std::map<docid_t, wordOccurence_t>;
-    using index_t = std::map<std::string_view, wordInfo_t>;
+    using docid_t = uint16_t;
+    // using word_t = std::string_view;
+    using word_t = std::string;
+
+    using wordOccurence_t = uint16_t;
+    using wordInfo_t = std::vector<wordOccurence_t>;
+    //   using index_t = std::map<std::string_view, wordInfo_t>;
+    using index_t = std::map<std::string, wordInfo_t>;
     using docs_t = std::deque<std::string>;
 
 public:
-    void Add(std::string &&document, size_t docid);
-    const wordInfo_t Lookup(const std::string_view &word);
+    void Add(std::string &&document, docid_t docid);
+    const wordInfo_t &Lookup(const word_t &word) const;
 
 public:
-    void AddWordOccurence(wordInfo_t &wordInfo, const size_t docid);
-    std::string &GetDocument(const size_t id);
-    size_t GetDocsCount();
-    index_t GetIndex()
-    {
-        return index;
-    }
+    void AddWordOccurence(const word_t &word, const docid_t docid);
 
 private:
     index_t index{};
-    docs_t docs;
+    docs_t docs{};
 };

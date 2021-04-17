@@ -5,49 +5,30 @@
 #include <algorithm>
 #include <mutex>
 
-void InvertedIndex::Add(std::string &&document, size_t docid)
+void InvertedIndex::Add(std::string &&document, docid_t docid)
 {
-  if (!docs.size() || (docs.size() - 1) < docid)
-    docs.resize(docid + 1, "");
+  /*if (!docs.size() || (docs.size() - 1) < docid)
+    docs.resize(docid + 1);
 
   docs[docid] = std::move(document);
-
-  for (const auto &word : SplitIntoWords(docs[docid]))
-  {
-    auto &wordInfo = index[word];
-    AddWordOccurence(wordInfo, docid);
-  }
+*/
+  //for (const auto &word : SplitIntoWords(docs[docid]))
+  for (const auto &word : SplitIntoWords(document))
+    AddWordOccurence(word, docid);
 }
 
-const InvertedIndex::wordInfo_t InvertedIndex::Lookup(const std::string_view &word)
+const InvertedIndex::wordInfo_t &InvertedIndex::Lookup(const word_t &word) const
 {
-  //static const std::vector<size_t> empty;
+  static const wordInfo_t empty;
   if (auto it = index.find(word); it != index.cend())
     return it->second;
-  return {};
+  return empty;
 }
 
-void InvertedIndex::AddWordOccurence(wordInfo_t &wordInfo, const size_t docid)
+void InvertedIndex::AddWordOccurence(const word_t &word, const docid_t docid)
 {
-/*  auto it = std::find_if(wordInfo.begin(), wordInfo.end(), [&docid](const auto &entry) { return entry.docid == docid; });
-  if (it == wordInfo.end())
-  {
-    Entry entry;
-    entry.docid = docid;
-    entry.wordOccurence = 1;
-    wordInfo.push_back(entry);
-  }
-  else
-    ++it->wordOccurence;*/
+  auto &wordInfo = index[word];
+  if (wordInfo.size() < (docid + 1))
+    wordInfo.resize(docid + 1);
   ++wordInfo[docid];
-}
-
-std::string &InvertedIndex::GetDocument(const size_t id)
-{
-  return docs[id];
-}
-
-size_t InvertedIndex::GetDocsCount()
-{
-  return docs.size();
 }

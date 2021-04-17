@@ -1,5 +1,9 @@
 #include "split_into_words.h"
+#include "search_server.h"
 
+#include <iterator>
+#include <sstream>
+/*
 std::vector<std::string_view> SplitIntoWords(std::string_view line)
 {
   std::vector<std::string_view> result;
@@ -13,6 +17,17 @@ std::vector<std::string_view> SplitIntoWords(std::string_view line)
     pos = FindWordBeginning(line, pos);
     line.remove_prefix(pos);
   }
+  return result;
+}
+*/
+
+std::vector<std::string> SplitIntoWords(const std::string &line)
+{
+  std::vector<std::string> result;
+  std::istringstream iss(line);
+  std::move(std::istream_iterator<std::string>(iss), std::istream_iterator<std::string>(), std::back_inserter(result));
+  //for (std::string current_string; std::getline(iss, current_string, ' ');)
+  //  result.push_back(std::move(current_string));
   return result;
 }
 

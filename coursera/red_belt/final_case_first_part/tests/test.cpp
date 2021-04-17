@@ -254,7 +254,7 @@ TEST(Duration, SplitIntoWords)
 {
   auto queries = gen_random();
   {
-    //LOG_DURATION("SplitIntoWords");
+    LOG_DURATION("SplitIntoWords");
     for (string current_query; getline(queries, current_query);)
       SplitIntoWords(current_query);
   }
@@ -268,7 +268,7 @@ TEST(Duration, SearchIndex)
   srv.UpdateDocumentBase(docs_input);
   ostringstream queries_output;
   {
-    //LOG_DURATION(" Split + Search ");
+    LOG_DURATION(" Split + Search ");
     for (string current_query; getline(queries_input, current_query);)
     {
       const auto words = SplitIntoWords(current_query);
@@ -283,6 +283,7 @@ TEST(Duration, SearchIndex)
   }
 }
 */
+
 TEST(Duration, All)
 {
   istringstream docs_input = gen_random_doc();

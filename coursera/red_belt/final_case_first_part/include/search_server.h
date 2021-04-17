@@ -11,6 +11,9 @@
 #include <condition_variable>
 #include <stack>
 #include <cassert>
+#include <set>
+#include <cstdint>
+#include <future>
 
 #define LOGF std::cerr << __FUNCTION__ << " " << __LINE__
 #define PR(x) std::cerr << #x << " = " << x << std::endl
@@ -47,45 +50,43 @@ struct
   }
 } Stack;
 
+using input_t = std::istream;
+using output_t = std::ostream;
+using query_t = std::string;
+using docidCount_t = std::vector<uint16_t>;
+using words_t = std::vector<std::string_view>;
+
 class SearchServer
 {
-public:
-  using input_t = std::istream;
-  using output_t = std::ostream;
-  using query_t = std::string;
-  using docidCount_t = std::map<size_t, size_t>;
-  using docidPosition_t = std::vector<size_t>;
-  using words_t = std::vector<std::string_view>;
-
 public:
   SearchServer() = default;
   explicit SearchServer(input_t &document_input);
   void UpdateDocumentBase(input_t &document_input);
-  void AddQueriesStream(input_t &query_input, output_t &search_results_output);
-
-public:
-  InvertedIndex &GetIndex();
 
 private:
-  static docidPosition_t CalculateDocidPosition(docidCount_t &docid_count);
-  // static void PartialSort(docidCount_t &docid_count, docidPosition_t &docid_position);
-
-  /* void PrintResults(output_t &search_results_output,
-                    const query_t &current_query,
-                    const docidPosition_t &docid_position,
-                    docidCount_t &docid_count);*/
-  void PrintResults(output_t &search_results_output,
-                    const query_t &current_query,
-                    docidCount_t &docid_count);
-
-  docidCount_t BuildDocidWordOccurence(const words_t &words);
   void CreateNewIndex(input_t &document_input);
   void ClearNewIndex();
   void FillNewIndex(input_t &document_input);
-  // void Resize(const docidCount_t &wordInfo, docidCount_t &docid_count);
-  // void Transform(const docidCount_t &wordInfo, docidCount_t &docid_count);
+
+public:
+  void AddQueriesStream(input_t &query_input, output_t &search_results_output);
+
+private:
+  void PrintResults(output_t &search_results_output,
+                    const query_t &current_query,
+                    const std::multiset<Entry> &docid_count);
+
+  //docidCount_t BuildDocidWordOccurence(const words_t &words);
+  docidCount_t BuildDocidWordOccurence(const std::vector<std::string> &words);
+
+public:
+  InvertedIndex &GetIndex()
+  {
+    return index_.GetAccess().ref_to_value;
+  }
 
 private:
   Synchronized<InvertedIndex> index_;
+  std::vector<std::future<void>> futures;
   Synchronized<InvertedIndex> new_index_;
 };
