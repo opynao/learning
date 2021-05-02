@@ -1,0 +1,1 @@
+#include "spendings_json.h"
