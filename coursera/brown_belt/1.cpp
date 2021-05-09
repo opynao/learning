@@ -1,21 +1,38 @@
-#include <map>
-#include <unordered_map>
+#include <iostream>
 
-bool CheckWord(const std::string &key)
+class Base
 {
-    return key.empty();
-}
+public:
+    //virtual
+    Base()
+    {
+        std::cout << "hello Base" << std::endl;
+    }
+    virtual ~Base()
+    {
+        std::cout << "Hello from ~Base()" << std::endl;
+    }
+/*     virtual void foo()
+    {
+    }
+ */};
+
+class Derived : public Base
+{
+public:
+    Derived()
+    {
+        std::cout << "hello derived" << std::endl;
+    }
+    ~Derived()
+    {
+        // Здесь могла бы быть очистка ресурсов
+        std::cout << "Hello from ~Derived()" << std::endl;
+    }
+};
 
 int main()
 {
-    std::unordered_map<std::string, int> words;
-    for (auto it = words.begin(); it != words.end(); ++it)
-    {
-        const auto key = it->first;
-        if (!CheckWord(key))
-        {
-            words.erase(key);
-        }
-    }
-    return 0;
+    Base *obj = new Derived();
+    delete obj;
 }
