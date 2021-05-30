@@ -1,29 +1,13 @@
 cmake_minimum_required(VERSION 3.10)
 set(CMAKE_CXX_COMPILER clang++)
-# cmake-format: on
+
 get_filename_component(ProjectId ${CMAKE_CURRENT_SOURCE_DIR} NAME)
 string(REPLACE " " "_" ProjectId ${ProjectId})
 project(${ProjectId})
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
-add_compile_options(
-    -Wall
-    -Wextra
-    -Wpedantic
-    -Werror
-    -Wnon-virtual-dtor
-    -Wunused
-    -Wshadow
-    -Wold-style-cast
-    -Wcast-align
-    -Woverloaded-virtual
-    -Wconversion
-    -Wsign-conversion 
-    -Wnull-dereference 
-    -Wdouble-promotion
-    -Wformat=2
-)
+add_compile_options(-Wall -Wextra -pedantic -Werror)
 #set(CMAKE_CXX_CLANG_TIDY 
 #       clang-tidy;
 #       -header-filter=.;

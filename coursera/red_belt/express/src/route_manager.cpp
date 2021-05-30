@@ -17,7 +17,6 @@ int RouteManager::FindNearestFinish(int start, int finish) const
   const std::set<int>& reachable_stations = reachable_lists_.at(start);
   if( reachable_stations.count(finish) )
     return 0;
-
   auto it = reachable_stations.lower_bound(finish);
   if ( it == reachable_stations.end() )
     return (std::min( result, std::abs(*std::prev(it) - finish)));
