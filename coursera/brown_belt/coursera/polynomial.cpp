@@ -1,10 +1,40 @@
-#pragma once
-#include "print_coeff.h"
-#include "utils.h"
-
 #include <iostream>
 #include <algorithm>
 #include <vector>
+
+using namespace std;
+
+template <typename T>
+void PrintCoeff(std::ostream &out, int i, const T &coef, bool printed)
+{
+    bool coeffPrinted = false;
+    if (coef == 1 && i > 0)
+    {
+        out << (printed ? "+" : "");
+    }
+    else if (coef == -1 && i > 0)
+    {
+        out << "-";
+    }
+    else if (coef >= 0 && printed)
+    {
+        out << "+" << coef;
+        coeffPrinted = true;
+    }
+    else
+    {
+        out << coef;
+        coeffPrinted = true;
+    }
+    if (i > 0)
+    {
+        out << (coeffPrinted ? "*" : "") << "x";
+    }
+    if (i > 1)
+    {
+        out << "^" << i;
+    }
+}
 
 template <typename T>
 class Polynomial
@@ -187,4 +217,9 @@ Polynomial<T> operator-(Polynomial<T> lhs, const Polynomial<T> &rhs)
 {
     lhs -= rhs;
     return lhs;
+}
+
+int main()
+{
+    return 0;
 }

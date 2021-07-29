@@ -123,12 +123,16 @@ TEST(Basic, NonconstAccess)
     poly[608] = 0;
     EXPECT_EQ(poly.Degree(), 5);
 
+    poly[4] = 3;
+    poly[5] = 0;
+    EXPECT_EQ(poly.Degree(), 4);
+
     {
         LOG_DURATION("Iteration over const");
         for (size_t i = 10; i < 50000; ++i)
         {
             EXPECT_EQ(std::as_const(poly)[i], 0);
-            EXPECT_EQ(poly.Degree(), 5);
+            EXPECT_EQ(poly.Degree(), 4);
         }
     }
     {
@@ -136,7 +140,7 @@ TEST(Basic, NonconstAccess)
         for (size_t i = 10; i < 50000; ++i)
         {
             EXPECT_EQ(poly[i], 0);
-            EXPECT_EQ(poly.Degree(), 5);
+            EXPECT_EQ(poly.Degree(), 4);
         }
     }
 }
