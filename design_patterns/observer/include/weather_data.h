@@ -3,6 +3,7 @@
 #include "observer.h"
 #include "publisher.h"
 #include <iostream>
+
 class WeatherData : public IPublisher
 {
 public:

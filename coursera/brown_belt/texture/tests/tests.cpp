@@ -3,7 +3,7 @@
 
 using namespace std;
 
-TEST(Basic, Simple)
+TEST(Basic, AddShape_ShapeIsInsideImage)
 {
     Canvas canvas;
     canvas.SetSize({5, 3});
@@ -18,6 +18,123 @@ TEST(Basic, Simple)
         "# ... #\n"
         "# ... #\n"
         "# ... #\n"
+        "#######\n";
+
+    EXPECT_EQ(answer, output.str());
+}
+
+TEST(Basic, AddShape_NonDefaultFill)
+{
+    Canvas canvas;
+    canvas.SetSize({5, 3});
+
+    canvas.AddShape(ShapeType::Rectangle, {1, 0}, {3, 3},
+                    MakeTextureSolid({3, 3}, '*'));
+
+    stringstream output;
+    canvas.Print(output);
+
+    const auto answer =
+        "#######\n"
+        "# *** #\n"
+        "# *** #\n"
+        "# *** #\n"
+        "#######\n";
+
+    EXPECT_EQ(answer, output.str());
+}
+
+TEST(Basic, AddShape_TextureIsEmpty)
+{
+    Canvas canvas;
+    canvas.SetSize({5, 3});
+
+    canvas.AddShape(ShapeType::Rectangle, {1, 0}, {3, 3},
+                    MakeTextureSolid({0, 0}, '*'));
+
+    stringstream output;
+    canvas.Print(output);
+
+    const auto answer =
+        "#######\n"
+        "# ... #\n"
+        "# ... #\n"
+        "# ... #\n"
+        "#######\n";
+
+    EXPECT_EQ(answer, output.str());
+}
+
+TEST(Basic, AddShape_SizeOfShapeIsNull)
+{
+    Canvas canvas;
+    canvas.SetSize({5, 3});
+
+    canvas.AddShape(ShapeType::Rectangle, {1, 0}, {0, 0}, nullptr);
+
+    stringstream output;
+    canvas.Print(output);
+
+    const auto answer =
+        "#######\n"
+        "#     #\n"
+        "#     #\n"
+        "#     #\n"
+        "#######\n";
+
+    EXPECT_EQ(answer, output.str());
+}
+
+TEST(Basic, AddShape_ImageEmpty)
+{
+    Canvas canvas;
+    canvas.SetSize({0, 0});
+
+    canvas.AddShape(ShapeType::Rectangle, {1, 0}, {0, 0}, nullptr);
+
+    stringstream output;
+    canvas.Print(output);
+
+    const std::string answer{};
+
+    EXPECT_EQ(answer, output.str());
+}
+
+TEST(Basic, AddShape_ShapeIsMoreThanImage)
+{
+    Canvas canvas;
+    canvas.SetSize({5, 3});
+
+    canvas.AddShape(ShapeType::Rectangle, {1, 0}, {5, 5}, nullptr);
+
+    stringstream output;
+    canvas.Print(output);
+
+    const auto answer =
+        "#######\n"
+        "# ....#\n"
+        "# ....#\n"
+        "# ....#\n"
+        "#######\n";
+
+    EXPECT_EQ(answer, output.str());
+}
+
+TEST(Basic, AddShape_ShapeIsOutsideImage)
+{
+    Canvas canvas;
+    canvas.SetSize({5, 3});
+
+    canvas.AddShape(ShapeType::Rectangle, {6, 6}, {5, 5}, nullptr);
+
+    stringstream output;
+    canvas.Print(output);
+
+    const auto answer =
+        "#######\n"
+        "#     #\n"
+        "#     #\n"
+        "#     #\n"
         "#######\n";
 
     EXPECT_EQ(answer, output.str());

@@ -4,17 +4,18 @@ using namespace std;
 
 void Canvas::SetSize(Size size)
 {
-    size_ = size;
+    m_ImageSize = size;
 }
 
 Canvas::ShapeId Canvas::AddShape(ShapeType shape_type, Point position, Size size,
                                  std::unique_ptr<ITexture> texture)
 {
+    LOGF;
     auto shape = MakeShape(shape_type);
     shape->SetPosition(position);
     shape->SetSize(size);
     shape->SetTexture(move(texture));
-
+    LOGF;
     return InsertShape(move(shape));
 }
 
@@ -47,17 +48,17 @@ int Canvas::GetShapesCount() const
 
 void Canvas::Print(ostream &output) const
 {
-    Image image(size_.height, string(size_.width, ' '));
-
+    Image image(m_ImageSize.height, string(m_ImageSize.width, ' '));
+    
     for (const auto &[id, shape] : shapes_)
         shape->Draw(image);
-
-    output << '#' << string(size_.width, '#') << "#\n";
-
+    
+    output << '#' << string(m_ImageSize.width, '#') << "#\n";
+    
     for (const auto &line : image)
         output << '#' << line << "#\n";
-
-    output << '#' << string(size_.width, '#') << "#\n";
+    
+    output << '#' << string(m_ImageSize.width, '#') << "#\n";
 }
 
 Canvas::Shapes::iterator Canvas::GetShapeNodeById(ShapeId id)

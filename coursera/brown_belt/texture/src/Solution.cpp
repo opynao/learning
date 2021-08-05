@@ -7,20 +7,22 @@ class Shape : public IShape
 public:
     void SetPosition(Point point) final
     {
-        point_ = std::move(point);
+        m_StartPoint = point;
     }
     Point GetPosition() const final
     {
-        return point_;
+        return m_StartPoint;
     }
+
     void SetSize(Size size) final
     {
-        size_ = std::move(size);
+        m_ShapeSize = size;
     }
     Size GetSize() const final
     {
-        return size_;
+        return m_ShapeSize;
     }
+
     void SetTexture(std::shared_ptr<ITexture> texture) final
     {
         texture_ = texture;
@@ -31,8 +33,8 @@ public:
     }
 
 protected:
-    Point point_;
-    Size size_;
+    Point m_StartPoint;
+    Size m_ShapeSize;
     std::shared_ptr<ITexture> texture_;
 };
 
@@ -43,19 +45,28 @@ public:
     {
         return std::make_unique<Rectangle>(*this);
     }
-    // Рисует фигуру на указанном изображении
 
+    // Рисует фигуру на указанном изображении
     void Draw(Image &image) const final
     {
-        int figureBeginLine = point_.y;
-        int figureBeginColumn = point_.x;
+        size_t figureBeginLine = m_StartPoint.y;
+        size_t figureBeginColumn = m_StartPoint.x;
 
-        int figureEndLine = size_.height + point_.y;
-        int figureEndColumn = size_.width + point_.x;
+        if (figureBeginColumn > image[0].size() || figureBeginLine > image.size())
+            return;
 
-        for (int line = figureBeginLine; line != figureEndLine; ++line)
+        size_t figureEndLine = m_ShapeSize.height + m_StartPoint.y;
+        size_t figureEndColumn = m_ShapeSize.width + m_StartPoint.x;
+
+        if (image[0].size() < figureEndColumn)
+            figureEndColumn = image[0].size();
+
+        if (image.size() < figureEndLine)
+            figureEndLine = image.size();
+
+        for (size_t line = figureBeginLine; line != figureEndLine; ++line)
         {
-            for (int column = figureBeginColumn; column != figureEndColumn; ++column)
+            for (size_t column = figureBeginColumn; column != figureEndColumn; ++column)
             {
                 if (IsPointInEllipseAndTexture(line, column))
                     image[line][column] = GetCharAtPoint(line, column);
@@ -68,7 +79,7 @@ public:
 private:
     char GetCharAtPoint(const int line, const int column) const
     {
-        return texture_->GetImage().at(line - point_.y).at(column - point_.x);
+        return texture_->GetImage().at(line - m_StartPoint.y).at(column - m_StartPoint.x);
     }
     bool IsPointInEllipseAndTexture(const int line, const int column) const
     {
@@ -91,18 +102,34 @@ public:
     {
         return std::make_unique<Ellipse>(*this);
     }
+
     void Draw(Image &image) const final
     {
-        for (int y = 0; y < size_.height; ++y)
+        size_t figureBeginLine = m_StartPoint.y;
+        size_t figureBeginColumn = m_StartPoint.x;
+
+        if (figureBeginColumn > image[0].size() || figureBeginLine > image.size())
+            return;
+
+        size_t figureEndLine = m_ShapeSize.height + m_StartPoint.y;
+        size_t figureEndColumn = m_ShapeSize.width + m_StartPoint.x;
+
+        if (image[0].size() < figureEndColumn)
+            figureEndColumn = image[0].size();
+
+        if (image.size() < figureEndLine)
+            figureEndLine = image.size();
+
+        for (int y = 0; y != m_ShapeSize.height; ++y)
         {
-            for (int x = 0; x < size_.width; ++x)
+            for (size_t x = 0; x != m_ShapeSize.width; ++x)
             {
-                if (IsPointInEllipse({x, y}, size_))
+                if (IsPointInEllipse({x, y}, m_ShapeSize))
                 {
                     if (IsPointInEllipseAndTexture(x, y))
-                        image[point_.y + y][point_.x + x] = GetCharAtPoint(x, y);
+                        image[m_StartPoint.y + y][m_StartPoint.x + x] = GetCharAtPoint(x, y);
                     else
-                        image[point_.y + y][point_.x + x] = '.';
+                        image[m_StartPoint.y + y][m_StartPoint.x + x] = '.';
                 }
             }
         }

@@ -1,0 +1,11 @@
+chain_of_responsibility
+decorator
+decorator.cpp
+factory
+factory_method
+file.txt
+observer
+Observer.cpp
+project_template
+simple_factory
+strategy

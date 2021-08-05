@@ -29,11 +29,13 @@ public:
 private:
     using Shapes = std::map<ShapeId, std::unique_ptr<IShape>>;
 
+private:
     Shapes::iterator GetShapeNodeById(ShapeId id);
 
     ShapeId InsertShape(std::unique_ptr<IShape> shape);
 
-    Size size_ = {};
+private:
+    Size m_ImageSize{};
     ShapeId current_id_ = 0;
     Shapes shapes_;
 };

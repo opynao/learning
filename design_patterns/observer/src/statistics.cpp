@@ -15,5 +15,5 @@ void StatisticsDisplay::Display(std::ostream &os) const
 
 double StatisticsDisplay::CalculateAverageTemp() const
 {
-    return std::accumulate(m_temperatureStats.begin(), m_temperatureStats.end(), 0) / (1.0 * m_temperatureStats.size());
+    return std::accumulate(m_temperatureStats.begin(), m_temperatureStats.end(), 0) / (1.0 * static_cast<double>(m_temperatureStats.size()));
 }
