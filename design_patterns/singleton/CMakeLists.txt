@@ -12,19 +12,18 @@ add_compile_options(
     -Wextra
     -Wpedantic
     -Werror
+    -Wnon-virtual-dtor
+    -Wunused
+    -Wshadow
+    -Wold-style-cast
+    -Wcast-align
+    -Woverloaded-virtual
+    -Wconversion
+    -Wsign-conversion 
+    -Wnull-dereference 
+    -Wdouble-promotion
+    -Wformat=2
 )
-#    -Wnon-virtual-dtor
-#    -Wunused
-#    -Wshadow
-#    -Wold-style-cast
-#    -Wcast-align
-#    -Woverloaded-virtual
-#    -Wconversion
-#    -Wsign-conversion 
-#    -Wnull-dereference 
-#    -Wdouble-promotion
-#    -Wformat=2
-#)
 #set(CMAKE_CXX_CLANG_TIDY 
 #       clang-tidy;
 #       -header-filter=.;

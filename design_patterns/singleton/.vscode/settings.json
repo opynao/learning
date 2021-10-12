@@ -1,11 +1,15 @@
 {
     "files.associations": {
+        "memory": "cpp",
         "array": "cpp",
         "atomic": "cpp",
+        "bit": "cpp",
         "*.tcc": "cpp",
         "cctype": "cpp",
         "clocale": "cpp",
         "cmath": "cpp",
+        "compare": "cpp",
+        "concepts": "cpp",
         "cstdarg": "cpp",
         "cstddef": "cpp",
         "cstdint": "cpp",
@@ -20,7 +24,6 @@
         "algorithm": "cpp",
         "functional": "cpp",
         "iterator": "cpp",
-        "memory": "cpp",
         "memory_resource": "cpp",
         "numeric": "cpp",
         "optional": "cpp",
@@ -31,7 +34,6 @@
         "tuple": "cpp",
         "type_traits": "cpp",
         "utility": "cpp",
-        "fstream": "cpp",
         "initializer_list": "cpp",
         "iosfwd": "cpp",
         "iostream": "cpp",
@@ -39,14 +41,9 @@
         "limits": "cpp",
         "new": "cpp",
         "ostream": "cpp",
-        "sstream": "cpp",
+        "ranges": "cpp",
         "stdexcept": "cpp",
         "streambuf": "cpp",
-        "typeinfo": "cpp",
-        "map": "cpp",
-        "bit": "cpp",
-        "compare": "cpp",
-        "concepts": "cpp",
-        "ranges": "cpp"
+        "typeinfo": "cpp"
     }
 }
