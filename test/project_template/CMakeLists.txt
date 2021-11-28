@@ -1,13 +1,29 @@
 cmake_minimum_required(VERSION 3.10)
 set(CMAKE_CXX_COMPILER g++-11)
-
+# cmake-format: on
 get_filename_component(ProjectId ${CMAKE_CURRENT_SOURCE_DIR} NAME)
 string(REPLACE " " "_" ProjectId ${ProjectId})
 project(${ProjectId})
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
-add_compile_options(-Wall -Wextra -pedantic -Werror)
+add_compile_options(
+    -Wall
+    -Wextra
+    -Wpedantic
+    -Werror
+    -Wnon-virtual-dtor
+    -Wunused
+    -Wshadow
+    -Wold-style-cast
+    -Wcast-align
+    -Woverloaded-virtual
+    -Wconversion
+    -Wsign-conversion 
+    -Wnull-dereference 
+    -Wdouble-promotion
+    -Wformat=2
+)
 #set(CMAKE_CXX_CLANG_TIDY 
 #       clang-tidy;
 #       -header-filter=.;
@@ -27,3 +43,5 @@ include(GoogleTest)
 add_executable(${CMAKE_PROJECT_NAME}_tests ${TESTS_SOURCE_FILES})
 target_link_libraries(${CMAKE_PROJECT_NAME}_tests GTest::GTest GTest::Main ${CMAKE_PROJECT_NAME}_lib)
 gtest_discover_tests(${CMAKE_PROJECT_NAME}_tests)
+find_package (Threads REQUIRED)
+target_link_libraries(${CMAKE_PROJECT_NAME} ${CMAKE_THREAD_LIBS_INIT})
